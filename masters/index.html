@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masters Pool 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif; background: #f4f6f1; color: #1b1b1b; min-height: 100vh; }
+  .hdr { background: linear-gradient(135deg, #0b2e1c 0%, #175937 60%, #0b2e1c 100%); padding: 18px 14px; border-bottom: 3px solid #c5a44e; }
+  .hdr-inner { max-width: 940px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .hdr h1 { margin: 0; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: 2.5px; display: flex; align-items: center; gap: 10px; }
+  .hdr h1 span { font-size: 26px; }
+  .hdr .sub { margin: 2px 0 0 36px; font-size: 11.5px; color: #c5a44e; letter-spacing: 0.8px; }
+  .hdr-right { text-align: right; }
+  .btn { background: #c5a44e; color: #0b2e1c; border: none; padding: 9px 20px; font-size: 13px; font-weight: 700; border-radius: 4px; cursor: pointer; font-family: inherit; transition: opacity .15s; }
+  .btn:hover { opacity: .85; }
+  .btn:disabled { opacity: .5; cursor: wait; }
+  .ts { margin: 4px 0 0; font-size: 9.5px; color: rgba(255,255,255,.5); }
+  .warn { max-width: 940px; margin: 8px auto 0; padding: 8px 12px; background: #fff8e1; border: 1px solid #ffe082; border-radius: 4px; font-size: 12px; color: #6d4c00; }
+  .hint { max-width: 940px; margin: 8px auto 0; padding: 12px; background: #fff; border: 1px solid #dde3d8; border-radius: 4px; font-size: 12.5px; color: #666; text-align: center; }
+  .sec { max-width: 940px; margin: 14px auto; padding: 0 12px; }
+  .sec-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; flex-wrap: wrap; gap: 4px; }
+  .sec h2 { margin: 0; font-size: 12px; color: #0b2e1c; letter-spacing: 2px; text-transform: uppercase; }
+  .sec .note { font-size: 9.5px; color: #999; }
+  .tbl { background: #fff; border-radius: 5px; overflow: hidden; border: 1px solid #dde3d8; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .thr { display: flex; align-items: center; padding: 7px 8px; background: #0b2e1c; color: #c5a44e; font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px; }
+  .tr { display: flex; align-items: center; padding: 9px 8px; border-bottom: 1px solid #eef1eb; cursor: pointer; transition: background .08s; font-size: 13.5px; }
+  .tr:hover { background: #f0f6ee !important; }
+  .td { width: 55px; text-align: center; font-family: 'Courier New', monospace; font-size: 13px; }
+  .td-net { width: 72px; text-align: center; font-weight: 700; font-size: 14px; }
+  .pos { width: 30px; text-align: center; font-weight: 700; font-size: 13px; }
+  .owner { flex: 1; font-weight: 600; color: #0b2e1c; }
+  .chevron { color: #ccc; font-size: 9px; margin-left: 4px; }
+  .detail { background: #f5f9f2; border-bottom: 1px solid #dde3d8; padding: 2px 8px 5px; }
+  .detail-hdr { display: flex; padding: 3px 0 1px 30px; font-size: 8.5px; color: #aaa; font-weight: 700; letter-spacing: 0.8px; }
+  .golfer-row { display: flex; align-items: center; padding: 4px 0 4px 30px; border-top: 1px solid #eaeee6; font-size: 12px; }
+  .golfer-row.cut { opacity: 0.4; }
+  .badge { margin-left: 4px; padding: 1px 4px; color: #fff; font-size: 8px; font-weight: 700; border-radius: 2px; vertical-align: middle; display: inline-block; }
+  .badge-mc { background: #c62828; }
+  .badge-wd { background: #e0a030; }
+  .best4-row { display: flex; padding: 5px 0 3px 30px; border-top: 1px solid #d5ddd0; font-size: 10.5px; font-weight: 700; color: #0b2e1c; }
+  .mono { font-family: 'Courier New', monospace; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 10px; }
+  .card { background: #fff; border-radius: 5px; overflow: hidden; border: 1px solid #dde3d8; }
+  .card-hdr { display: flex; justify-content: space-between; align-items: center; padding: 7px 11px; background: #0b2e1c; color: #fff; }
+  .card-hdr .name { font-weight: 700; font-size: 13px; }
+  .card-hdr .meta { font-size: 10px; color: #c5a44e; }
+  .card-row { display: flex; align-items: center; padding: 6px 11px; border-bottom: 1px solid #f0f2ed; font-size: 12px; }
+  .card-row.cut { opacity: 0.4; }
+  .card-row .gname { flex: 1; }
+  .card-row .gpar { width: 34px; text-align: center; font-weight: 700; font-size: 12px; }
+  .card-row .gstatus { width: 80px; text-align: right; font-size: 10px; color: #999; white-space: nowrap; }
+  .foot { max-width: 940px; margin: 14px auto 22px; padding: 10px 14px; background: #fff; border-radius: 4px; border: 1px solid #dde3d8; font-size: 10.5px; color: #888; line-height: 1.7; }
+  .foot b { color: #0b2e1c; }
+  .c-under { color: #c62828; }
+  .c-even { color: #555; }
+  .c-over { color: #0b2e1c; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+
+<script type="text/babel">
+const { useState, useCallback } = React;
+
+/* ═══════════════════════════════════════════
+   TEAMS
+   ═══════════════════════════════════════════ */
+const TEAMS = [
+  { owner: "Gait", num: 1, golfers: ["Scottie Scheffler","Akshay Bhatia","Chris Gotterup","Harris English","Jacob Bridgeman","Maverick McNealy"] },
+  { owner: "Aaron", num: 2, golfers: ["Rory McIlroy","Patrick Reed","Hideki Matsuyama","Sepp Straka","Tyrrell Hatton","Marco Penge"] },
+  { owner: "Marcus", num: 3, golfers: ["Bryson DeChambeau","Robert MacIntyre","Jordan Spieth","Russell Henley","Jake Knapp","Wyndham Clark"] },
+  { owner: "Marcel", num: 4, golfers: ["Jon Rahm","Viktor Hovland","Patrick Cantlay","Max Homa","Gary Woodland","Daniel Berger"] },
+  { owner: "Lindsey", num: 5, golfers: ["Xander Schauffele","Justin Rose","Brooks Koepka","Nicolai Højgaard","Rasmus Højgaard","Cameron Smith"] },
+  { owner: "Avery", num: 6, golfers: ["Ludvig Åberg","Min Woo Lee","Si Woo Kim","Sungjae Im","J.J. Spaun","Kurt Kitayama"] },
+  { owner: "Warren", num: 7, golfers: ["Cameron Young","Matt Fitzpatrick","Shane Lowry","Corey Conners","Keegan Bradley","Ben Griffin"] },
+  { owner: "Will", num: 8, golfers: ["Tommy Fleetwood","Collin Morikawa","Justin Thomas","Adam Scott","Sam Burns","Jason Day"] },
+];
+
+/* ═══════════════════════════════════════════
+   NAME MATCHING
+   ═══════════════════════════════════════════ */
+function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z\s]/g,"").trim(); }
+function last(s) { const p = norm(s).split(/\s+/); return p[p.length-1]; }
+const ALIASES = {
+  "akshay bhatia":["ashkay bhatia"],"robert macintyre":["bob macintyre","bobby macintyre","macintyre"],
+  "viktor hovland":["victor hovland"],"nicolai hojgaard":["nicolai hogaard","jacob hojgaard"],
+  "rasmus hojgaard":["rasmus hogaard"],"cameron smith":["cam smith"],"ludvig aberg":["ludvig berg"],
+  "jj spaun":["j.j. spaun","j j spaun"],"collin morikawa":["colin morikawa"],
+  "cameron young":["cam young"],"bryson dechambeau":["bryson dechambo"],
+};
+function nameMatch(a_, b_) {
+  const a = norm(a_), b = norm(b_);
+  if (a === b) return true;
+  if (last(a_) === last(b_) && last(a_).length > 3) {
+    const af = a.split(/\s+/)[0], bf = b.split(/\s+/)[0];
+    if (af[0] === bf[0] || last(a_).length >= 6) return true;
+  }
+  for (const [k, vs] of Object.entries(ALIASES)) {
+    const all = [norm(k), ...vs.map(norm)];
+    if (all.includes(a) && all.includes(b)) return true;
+  }
+  return false;
+}
+
+/* ═══════════════════════════════════════════
+   HELPERS
+   ═══════════════════════════════════════════ */
+function parsePar(s) {
+  if (s == null || s === "–" || s === "") return null;
+  if (s === "E" || s === "0") return 0;
+  const n = parseInt(s, 10);
+  return isNaN(n) ? null : n;
+}
+function fmtPar(n) {
+  if (n == null) return "–";
+  if (n === 0) return "E";
+  return n > 0 ? "+" + n : "" + n;
+}
+function parCls(p) {
+  const s = typeof p === "number" ? fmtPar(p) : p;
+  if (typeof s === "string" && s.startsWith("-")) return "c-under";
+  if (s === "E") return "c-even";
+  return "c-over";
+}
+
+/* ═══════════════════════════════════════════
+   ESPN PARSER
+   
+   Actual ESPN structure (from debug):
+   - c.score = "-5" (tournament to-par string)
+   - c.status = null (NOT AVAILABLE)
+   - c.linescores = array of round objects:
+     {
+       value: 67,              // strokes (running if mid-round)
+       displayValue: "-5",     // round to-par
+       period: 1,              // round number
+       linescores: [           // HOLE-BY-HOLE scores
+         { value: 4, period: 1, scoreType: { displayValue: "E" } },
+         ...
+       ]
+     }
+   - 18 hole entries = round COMPLETE
+   - <18 hole entries = MID-ROUND (thru = count)
+   - { period: 2 } with no data = round NOT STARTED
+   ═══════════════════════════════════════════ */
+const ESPN_URL = "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard";
+
+function parseESPN(raw) {
+  const events = raw.events || [];
+  const ev = events.find(e => /master/i.test(e.name || "")) || events[0];
+  if (!ev) return { players: [], event: "No event", round: "" };
+  const comp = (ev.competitions || [])[0];
+  if (!comp) return { players: [], event: ev.name, round: "" };
+  const roundStatus = comp.status?.type?.shortDetail || comp.status?.type?.detail || "";
+  const players = [];
+
+  for (const c of comp.competitors || []) {
+    const ath = c.athlete || {};
+    const rounds = c.linescores || [];
+    const toParStr = typeof c.score === "string" ? c.score : "–";
+
+    // Parse each round
+    const completedScores = [null, null, null, null]; // stroke totals for finished rounds
+    let currentRound = null;  // round number they're currently playing
+    let thruHoles = null;     // holes completed in current round
+    let isFinished = false;   // finished their current round
+
+    for (const rd of rounds) {
+      const rdNum = rd.period; // 1-indexed round number
+      const holeScores = rd.linescores || [];
+      const numHoles = holeScores.length;
+
+      if (numHoles === 18) {
+        // Round is COMPLETE — use the value as final score
+        completedScores[rdNum - 1] = rd.value;
+        currentRound = rdNum;
+        isFinished = true;
+      } else if (numHoles > 0) {
+        // Round is IN PROGRESS
+        currentRound = rdNum;
+        thruHoles = numHoles;
+        isFinished = false;
+        // DO NOT store rd.value — it's a running total, not a final score
+      } else if (rd.value == null) {
+        // Round not started (just { period: N })
+        // If we haven't set currentRound yet, this is their next round
+        if (currentRound == null) {
+          currentRound = rdNum;
+          thruHoles = 0;
+        }
+      }
+    }
+
+    // Build status string
+    let statusStr = "–";
+    if (currentRound != null) {
+      if (isFinished) {
+        statusStr = "R" + currentRound + " · F";
+      } else if (thruHoles != null && thruHoles > 0) {
+        statusStr = "R" + currentRound + " · " + thruHoles;
+      } else if (thruHoles === 0) {
+        // Check for tee time in statistics
+        const stats = rounds[0]?.statistics?.categories?.[0]?.stats || [];
+        const teeTimeStat = stats.find(s => s.displayValue && /[AP]M/.test(s.displayValue));
+        if (teeTimeStat) {
+          // Extract time portion
+          const match = teeTimeStat.displayValue.match(/(\d{1,2}:\d{2}:\d{2}\s*[AP]M)/i);
+          if (match) {
+            statusStr = "R" + currentRound + " · " + match[1].replace(/:00\s/, " ");
+          } else {
+            statusStr = "R" + currentRound + " · TBD";
+          }
+        } else {
+          statusStr = "R" + currentRound;
+        }
+      }
+    }
+
+    // Detect MC/WD from score or other signals
+    const isMC = toParStr === "CUT" || (c.status && typeof c.status === "object" && (c.status.type?.name || "").toLowerCase().includes("cut"));
+    const isWD = toParStr === "WD" || (c.status && typeof c.status === "object" && (c.status.type?.name || "").toLowerCase().includes("wd"));
+
+    players.push({
+      name: ath.displayName || "",
+      completedScores,
+      toPar: (isMC || isWD) ? "–" : toParStr,
+      toParNum: parsePar(toParStr),
+      statusStr: isMC ? "MC" : isWD ? "WD" : statusStr,
+      currentRound,
+      thruHoles,
+      isFinished,
+      madeCut: !isMC,
+      isWD,
+    });
+  }
+  return { players, event: ev.name || "", round: roundStatus };
+}
+
+/* ═══════════════════════════════════════════
+   TEAM SCORING
+   ═══════════════════════════════════════════ */
+function scoreTeam(team, lookup) {
+  const PENALTY = 80;
+  const gData = team.golfers.map(name => {
+    const s = lookup[name];
+    const rounds = [null, null, null, null];
+    let mc = true, wd = false, par = "–", parNum = null, statusStr = "–";
+    if (s) {
+      for (let i = 0; i < 4; i++) rounds[i] = s.completedScores[i];
+      mc = s.madeCut !== false; wd = !!s.isWD;
+      par = s.toPar; parNum = s.toParNum; statusStr = s.statusStr;
+      if (!mc) {
+        const hi = Math.max(PENALTY, ...[rounds[0], rounds[1]].filter(x => x != null));
+        if (rounds[2] == null) rounds[2] = hi;
+        if (rounds[3] == null) rounds[3] = hi;
+        if (parNum != null) parNum = parNum + (hi - 72) * 2;
+      }
+    }
+    const strokeTotal = rounds.filter(x => x != null).reduce((a, b) => a + b, 0);
+    return { name, rounds, madeCut: mc, isWD: wd, toPar: par, toParNum: parNum, statusStr, strokeTotal: strokeTotal || null };
+  });
+
+  const withPar = gData.filter(g => g.toParNum != null);
+  const sorted = [...withPar].sort((a, b) => a.toParNum - b.toParNum);
+  const best4 = sorted.slice(0, 4);
+  const teamPar = best4.length > 0 ? best4.reduce((sum, g) => sum + g.toParNum, 0) : null;
+  const best4Set = new Set(best4.map(g => g.name));
+  gData.forEach(g => { g.inBest4 = best4Set.has(g.name); });
+
+  const rTot = [0, 0, 0, 0];
+  for (let i = 0; i < 4; i++) {
+    const vals = gData.map(g => g.rounds[i]).filter(x => x != null).sort((a, b) => a - b);
+    rTot[i] = vals.slice(0, 4).reduce((a, b) => a + b, 0);
+  }
+  return { gData, rTot, teamPar, strokeTotal: rTot.reduce((a, b) => a + b, 0) };
+}
+
+/* ═══════════════════════════════════════════
+   APP
+   ═══════════════════════════════════════════ */
+function App() {
+  const [scores, setScores] = useState({});
+  const [info, setInfo] = useState({ event:"", round:"", matched:0, total:48, ts:null, err:null, ms:0 });
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(null);
+
+  const refresh = useCallback(async () => {
+    setLoading(true); setInfo(p => ({...p, err:null}));
+    const t0 = performance.now();
+    try {
+      const res = await fetch(ESPN_URL);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const raw = await res.json();
+      const { players, event, round } = parseESPN(raw);
+      const newScores = {}; let matched = 0;
+      for (const rn of TEAMS.flatMap(t => t.golfers)) {
+        const hit = players.find(p => nameMatch(p.name, rn));
+        if (hit) { newScores[rn] = hit; matched++; }
+      }
+      setScores(newScores);
+      setInfo({ event, round, matched, total:48, ts: new Date(), ms: Math.round(performance.now()-t0),
+        err: matched === 0 ? 'No golfers matched. ESPN shows "'+event+'".' : (matched < 24 ? matched+"/48 matched." : null)
+      });
+    } catch (e) { setInfo(p => ({...p, err:"Fetch failed: "+e.message, ts:new Date(), ms:0})); }
+    setLoading(false);
+  }, []);
+
+  const standings = TEAMS.map(t => ({...t, ...scoreTeam(t, scores)}))
+    .sort((a,b) => {
+      if (a.teamPar == null && b.teamPar == null) return a.num - b.num;
+      if (a.teamPar == null) return 1; if (b.teamPar == null) return -1;
+      return a.teamPar - b.teamPar;
+    });
+
+  const hasData = Object.keys(scores).length > 0;
+
+  return (
+    <div>
+      <header className="hdr">
+        <div className="hdr-inner">
+          <div>
+            <h1><span>⛳</span> MASTERS POOL 2026</h1>
+            <p className="sub">{info.event || "Augusta National · April 9–12"}{info.round ? " · " + info.round : ""}</p>
+          </div>
+          <div className="hdr-right">
+            <button className="btn" onClick={refresh} disabled={loading}>{loading ? "⟳ Loading…" : "⟳ Refresh"}</button>
+            {info.ts && <p className="ts">{info.ts.toLocaleTimeString()} · {info.matched}/{info.total} matched · {info.ms}ms</p>}
+          </div>
+        </div>
+      </header>
+
+      {info.err && <div className="warn">⚠ {info.err}</div>}
+      {!hasData && !loading && !info.err && <div className="hint">Hit <b>Refresh</b> to pull live scores from ESPN.</div>}
+
+      {/* STANDINGS */}
+      <section className="sec">
+        <div className="sec-head">
+          <h2>Standings</h2>
+          <span className="note">Best 4 of 6 net to-par · MC = max(80, highest carded) per penalty rd</span>
+        </div>
+        <div className="tbl">
+          <div className="thr">
+            <span style={{width:30,textAlign:"center"}}>#</span>
+            <span style={{flex:1}}>TEAM</span>
+            <span style={{width:55,textAlign:"center"}}>R1</span>
+            <span style={{width:55,textAlign:"center"}}>R2</span>
+            <span style={{width:55,textAlign:"center"}}>R3</span>
+            <span style={{width:55,textAlign:"center"}}>R4</span>
+            <span style={{width:72,textAlign:"center"}}>NET</span>
+          </div>
+          {standings.map((t,i) => {
+            const pos = t.teamPar != null ? i+1 : "–";
+            const isOpen = open === t.owner;
+            return (
+              <div key={t.owner}>
+                <div className="tr" onClick={() => setOpen(isOpen ? null : t.owner)} style={{
+                  background: isOpen ? "#eef4eb" : i%2===0 ? "#fff" : "#fafcf8",
+                  borderLeft: pos===1 ? "3px solid #c5a44e" : "3px solid transparent",
+                }}>
+                  <span className="pos" style={{color: pos<=3 ? "#c5a44e" : "#0b2e1c"}}>{pos}</span>
+                  <span className="owner">{t.owner} <span className="chevron">{isOpen ? "▴" : "▾"}</span></span>
+                  {t.rTot.map((r,j) => <span key={j} className="td" style={{color:r>0?"#333":"#d0d0d0"}}>{r>0?r:"–"}</span>)}
+                  <span className={"td-net "+parCls(t.teamPar)}>{t.teamPar != null ? fmtPar(t.teamPar) : "–"}</span>
+                </div>
+                {isOpen && (
+                  <div className="detail">
+                    <div className="detail-hdr">
+                      <span style={{flex:1}}>GOLFER</span>
+                      <span style={{width:38,textAlign:"center"}}>PAR</span>
+                      <span style={{width:80,textAlign:"center"}}>STATUS</span>
+                      <span style={{width:48,textAlign:"center"}}>R1</span>
+                      <span style={{width:48,textAlign:"center"}}>R2</span>
+                      <span style={{width:48,textAlign:"center"}}>R3</span>
+                      <span style={{width:48,textAlign:"center"}}>R4</span>
+                      <span style={{width:56,textAlign:"center"}}>STRKS</span>
+                    </div>
+                    {t.gData.map(g => (
+                      <div key={g.name} className={"golfer-row"+(g.madeCut?"":" cut")} style={{background:g.inBest4?"rgba(197,164,78,0.06)":"transparent"}}>
+                        <span style={{flex:1}}>
+                          {g.inBest4 && <span style={{color:"#c5a44e",fontSize:9,marginRight:3}}>★</span>}
+                          {g.name}
+                          {!g.madeCut && <span className="badge badge-mc">MC</span>}
+                          {g.isWD && <span className="badge badge-wd">WD</span>}
+                        </span>
+                        <span style={{width:38,textAlign:"center",fontWeight:700,fontSize:12}} className={parCls(g.toPar)}>{g.toPar}</span>
+                        <span style={{width:80,textAlign:"center",fontSize:9.5,color:"#999"}}>{g.statusStr}</span>
+                        {g.rounds.map((r,j) => (
+                          <span key={j} className="mono" style={{width:48,textAlign:"center",fontSize:12,
+                            color:r!=null?(!g.madeCut&&j>=2&&r>=80?"#ccc":"#333"):"#ddd"
+                          }}>{r!=null?r:"–"}</span>
+                        ))}
+                        <span className="mono" style={{width:56,textAlign:"center",fontSize:12,fontWeight:600}}>{g.strokeTotal||"–"}</span>
+                      </div>
+                    ))}
+                    <div className="best4-row">
+                      <span style={{flex:1}}>BEST 4</span>
+                      <span style={{width:38,textAlign:"center",fontWeight:700,fontSize:12}} className={parCls(t.teamPar)}>{t.teamPar!=null?fmtPar(t.teamPar):"–"}</span>
+                      <span style={{width:80}}></span>
+                      {t.rTot.map((r,j) => <span key={j} className="mono" style={{width:48,textAlign:"center"}}>{r>0?r:"–"}</span>)}
+                      <span className="mono" style={{width:56,textAlign:"center"}}>{t.strokeTotal>0?t.strokeTotal:"–"}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* TEAM CARDS */}
+      <section className="sec">
+        <h2 style={{marginBottom:8}}>All Teams</h2>
+        <div className="grid">
+          {TEAMS.map(team => {
+            const td = standings.find(s => s.owner === team.owner);
+            return (
+              <div key={team.owner} className="card">
+                <div className="card-hdr">
+                  <span className="name">{team.owner}</span>
+                  <span className="meta">#{team.num}{td?.teamPar!=null?" · Net "+fmtPar(td.teamPar):""}</span>
+                </div>
+                {team.golfers.map(g => {
+                  const s = scores[g]; const mc = s && s.madeCut===false;
+                  const p = s?.toPar||"–"; const st = s?.statusStr||"–";
+                  return (
+                    <div key={g} className={"card-row"+(mc?" cut":"")}>
+                      <span className="gname">{g}</span>
+                      <span className={"gpar "+parCls(p)}>{p}</span>
+                      <span className="gstatus">{st}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <footer className="foot">
+        <b>RULES</b> — Best 4 of 6 golfers' to-par scores summed. MC → R3 &amp; R4 = max(80, highest carded rd). Lowest net wins.<br/>
+        <b>DATA</b> — ESPN Golf Scoreboard API, direct browser fetch.
+      </footer>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
