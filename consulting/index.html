@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulting - GWN Ventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">GWN Ventures</a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="/consulting" class="active">Consulting</a>
+        <div class="dropdown-menu">
+          <a href="#services">What We Do</a>
+          <a href="#team">About</a>
+          <a href="#contact">Let's Talk</a>
+        </div>
+      </div>
+      <a href="/social">SOCIAL</a>
+    </div>
+  </nav>
+
+  <main class="consulting">
+    <section class="consulting-hero">
+      <h1>Let's move.</h1>
+    </section>
+
+    <section class="consulting-services" id="services">
+      <h2>What We Do</h2>
+      <div class="services-list">
+        <div class="service-item">
+          <h3>Transactions & Investments</h3>
+          <p class="service-subtitle">Evaluating and executing deals.</p>
+          <ul>
+            <li>Commercial and operational due diligence</li>
+            <li>Investment evaluation and thesis development</li>
+            <li>Valuation analysis and deal preparation</li>
+            <li>PMO setup and transaction readiness</li>
+          </ul>
+        </div>
+        <div class="service-item">
+          <h3>Strategy & Operations</h3>
+          <p class="service-subtitle">Making the business better.</p>
+          <ul>
+            <li>Value creation and cost optimization</li>
+            <li>Operating model and organizational design</li>
+            <li>Transformation planning and change management</li>
+            <li>Program management and execution</li>
+          </ul>
+        </div>
+        <div class="service-item">
+          <h3>AI & Technology</h3>
+          <p class="service-subtitle">Building the future.</p>
+          <ul>
+            <li>AI-enabled workflow design and deployment</li>
+            <li>Technology strategy and digital roadmap</li>
+            <li>Alignment of technical execution to business objectives</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="consulting-team" id="team">
+      <h2>About</h2>
+      <div class="team-profile">
+        <div class="team-photo">
+          <img src="../images/gait-headshot.jpg" alt="Gait Nairn">
+        </div>
+        <div class="team-bio">
+          <h3>Gait Nairn</h3>
+          <p>
+            With over three years at <strong>Deloitte Consulting</strong> in Strategy & Transactions, Gait has advised private equity firms and Fortune 500 companies through complex M&A transactions. He has led commercial and operational diligence across technology, life sciences, cybersecurity, and education &mdash; sizing multi-billion dollar markets, running executive interview programs, and identifying tens of millions in value creation opportunity.
+          </p>
+          <p>
+            Today Gait leads strategy and transformation at a PE-backed portfolio company, where he sources and executes acquisitions and deploys AI-driven initiatives to improve operational performance.
+          </p>
+          <p>
+            Gait holds a B.A. in Economics with Honors from <strong>Claremont McKenna College</strong> and has passed the <strong>CFA Level 1</strong> exam.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="consulting-contact" id="contact">
+      <h2>Let's Talk</h2>
+      <form action="https://formspree.io/f/xzdylvye" method="POST" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="form-group">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <script>
+    (function() {
+      var dropdown = document.querySelector('.nav-dropdown');
+      var menu = dropdown.querySelector('.dropdown-menu');
+      var timer;
+      function show() { clearTimeout(timer); menu.classList.add('open'); }
+      function hide() { timer = setTimeout(function() { menu.classList.remove('open'); }, 100); }
+      dropdown.addEventListener('mouseenter', show);
+      dropdown.addEventListener('mouseleave', hide);
+      menu.addEventListener('mouseenter', show);
+      menu.addEventListener('mouseleave', hide);
+    })();
+  </script>
+</body>
+</html>
