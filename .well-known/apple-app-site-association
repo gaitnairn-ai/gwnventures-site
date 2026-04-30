@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["F7S7WTHWNW.com.gwnventures.social"],
+        "components": [
+          { "/": "/social/invite/*" }
+        ]
+      }
+    ]
+  }
+}
