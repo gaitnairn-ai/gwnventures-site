@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOCIAL Invite - GWN Ventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var match = path.match(/^\/social\/invite\/([A-Za-z0-9]+)\/?$/);
+      if (!match) {
+        window.location.href = '/';
+        return;
+      }
+
+      var code = match[1];
+      var deepLink = 'social://invite/' + code;
+
+      document.title = 'SOCIAL Invite — ' + code;
+
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('invite-code-display').textContent = code;
+        document.getElementById('open-btn').href = deepLink;
+
+        document.getElementById('copy-btn').addEventListener('click', function() {
+          var btn = this;
+          navigator.clipboard.writeText(code).then(function() {
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
+          });
+        });
+
+        setTimeout(function() {
+          window.location.href = deepLink;
+        }, 600);
+      });
+    })();
+  </script>
+
+  <nav>
+    <a href="/" class="nav-logo">GWN Ventures</a>
+    <div class="nav-links">
+      <a href="/consulting">Consulting</a>
+      <a href="/social" class="active">SOCIAL</a>
+    </div>
+  </nav>
+
+  <main class="invite-page">
+    <div class="invite-card">
+      <p class="invite-label">You've been invited to</p>
+      <h1>SOCIAL</h1>
+      <p class="invite-tagline">Not social media, just social.</p>
+
+      <div class="invite-code-box">
+        <span class="invite-code-label">Your invite code</span>
+        <span id="invite-code-display" class="invite-code"></span>
+      </div>
+
+      <div class="invite-actions">
+        <a id="open-btn" href="#" class="btn btn-primary">Open in SOCIAL</a>
+        <button id="copy-btn" class="btn btn-outline" type="button">Copy Code</button>
+      </div>
+
+      <div class="invite-fallback">
+        <p>Don't have SOCIAL yet?</p>
+        <a href="https://testflight.apple.com/join/XYrDszEH" class="invite-tf-link">Download the beta on TestFlight &rarr;</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
