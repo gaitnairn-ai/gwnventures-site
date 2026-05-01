@@ -20,13 +20,12 @@
       }
 
       var code = match[1];
-      var deepLink = 'social://invite/' + code;
 
       document.title = 'SOCIAL Invite — ' + code;
 
       document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('invite-code-display').textContent = code;
-        document.getElementById('open-btn').href = deepLink;
+        document.getElementById('open-btn').href = 'social://invite/' + code;
 
         document.getElementById('copy-btn').addEventListener('click', function() {
           var btn = this;
@@ -35,10 +34,6 @@
             setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
           });
         });
-
-        setTimeout(function() {
-          window.location.href = deepLink;
-        }, 600);
       });
     })();
   </script>
@@ -63,13 +58,13 @@
       </div>
 
       <div class="invite-actions">
-        <a id="open-btn" href="#" class="btn btn-primary">Open in SOCIAL</a>
+        <a href="https://testflight.apple.com/join/XYrDszEH" class="btn btn-primary">Get SOCIAL on TestFlight</a>
         <button id="copy-btn" class="btn btn-outline" type="button">Copy Code</button>
       </div>
 
       <div class="invite-fallback">
-        <p>Don't have SOCIAL yet?</p>
-        <a href="https://testflight.apple.com/join/XYrDszEH" class="invite-tf-link">Download the beta on TestFlight &rarr;</a>
+        <p>Already have SOCIAL?</p>
+        <a id="open-btn" href="#" class="invite-tf-link">Open in SOCIAL &rarr;</a>
       </div>
     </div>
   </main>
