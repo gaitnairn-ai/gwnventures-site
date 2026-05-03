@@ -2,75 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOCIAL Invite - GWN Ventures</title>
-  <meta property="og:title" content="You've been invited to SOCIAL">
-  <meta property="og:description" content="Not media, just social.">
-  <meta property="og:image" content="https://gwnventures.com/images/social-og.png">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <meta http-equiv="refresh" content="0; url=/">
+  <title>Page Not Found - GWN Ventures</title>
 </head>
 <body>
-  <script>
-    (function() {
-      var path = window.location.pathname;
-      var match = path.match(/^\/social\/invite\/([A-Za-z0-9]+)\/?$/);
-      if (!match) {
-        window.location.href = '/';
-        return;
-      }
-
-      var code = match[1];
-
-      document.title = 'SOCIAL Invite — ' + code;
-
-      document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('invite-code-display').textContent = code;
-        document.getElementById('open-btn').href = 'social://invite/' + code;
-
-        document.getElementById('copy-btn').addEventListener('click', function() {
-          var btn = this;
-          navigator.clipboard.writeText(code).then(function() {
-            btn.textContent = 'Copied!';
-            setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
-          });
-        });
-      });
-    })();
-  </script>
-
-  <nav>
-    <a href="/" class="nav-logo">GWN Ventures</a>
-    <div class="nav-links">
-      <a href="/consulting">Consulting</a>
-      <a href="/social" class="active">SOCIAL</a>
-    </div>
-  </nav>
-
-  <main class="invite-page">
-    <div class="invite-card">
-      <p class="invite-label">You've been invited to</p>
-      <h1>SOCIAL</h1>
-      <p class="invite-tagline">Not media, just social.</p>
-
-      <div class="invite-code-box">
-        <span class="invite-code-label">Your invite code</span>
-        <span id="invite-code-display" class="invite-code"></span>
-      </div>
-
-      <div class="invite-actions">
-        <a href="https://testflight.apple.com/join/XYrDszEH" class="btn btn-primary">Get SOCIAL on TestFlight</a>
-        <button id="copy-btn" class="btn btn-outline" type="button">Copy Code</button>
-      </div>
-
-      <div class="invite-fallback">
-        <p>Already have SOCIAL?</p>
-        <a id="open-btn" href="#" class="invite-tf-link">Open in SOCIAL &rarr;</a>
-      </div>
-    </div>
-  </main>
+  <p>Redirecting to <a href="/">home page</a>...</p>
 </body>
 </html>
