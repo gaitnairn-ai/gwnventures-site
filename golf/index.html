@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fescue Club — Indoor Golf on Real Grass in New York City</title>
+<meta name="description" content="A premium indoor golf club opening in New York City (target fall 2027) with simulator bays where you hit off real, living grass — not synthetic mats. Year-round, climate-controlled. Join the waitlist.">
+<meta property="og:title" content="Fescue Club — Indoor Golf on Real Grass in New York City">
+<meta property="og:description" content="Simulator bays with living turf, grown off-site and rotated fresh into the bays. Year-round practice off real grass in NYC. Target opening fall 2027.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gwnventures.com/golf/assets/hero-bay.jpg">
+<meta property="og:url" content="https://gwnventures.com/golf/">
+<link rel="canonical" href="https://gwnventures.com/golf/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fescue Club — Indoor Golf on Real Grass in New York City">
+<meta name="twitter:description" content="Simulator bays with living turf — real grass indoor golf in NYC, year-round. Join the waitlist.">
+<meta name="theme-color" content="#16211a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-bay.jpg">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"SportsActivityLocation","name":"Fescue Club","url":"https://gwnventures.com/golf/","description":"A premium indoor golf club opening in New York City (target fall 2027) with simulator bays where players hit off real, living grass grown off-site and rotated fresh into the bays. Year-round, climate-controlled indoor golf practice on real turf.","address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"},"keywords":"indoor golf NYC, real grass indoor golf, year-round golf practice New York, grass driving range NYC"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"When does the club open?","acceptedAnswer":{"@type":"Answer","text":"We are targeting fall 2027 in New York City. Timing may change as plans are finalized — the waitlist is the first to hear updates."}},
+{"@type":"Question","name":"How does real grass survive indoors?","acceptedAnswer":{"@type":"Answer","text":"It doesn't have to. The turf is grown off-site under natural conditions with our greenhouse and nursery partners, delivered and rotated fresh into the bays every session."}},
+{"@type":"Question","name":"How much does membership cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is being finalized; we estimate between $300 and $500 per month. Waitlist members will see membership details first, with access to discounted founding rates."}},
+{"@type":"Question","name":"What comes with membership?","acceptedAnswer":{"@type":"Answer","text":"Access to simulator bays on real grass with TrackMan simulation, bag storage, advance booking through our app, and in-person lessons and fittings. Terms are not final."}},
+{"@type":"Question","name":"Is there indoor golf on real grass in NYC today?","acceptedAnswer":{"@type":"Answer","text":"No. Every existing indoor golf venue in New York puts players on synthetic mats. Playing off real grass indoors is proven at the professional level — the TGL league plays off real grass indoors in Florida — but no consumer facility offers it yet."}}
+]}]}
+</script>
+
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --cream:#f2f1e8;
+  --cream-3:#f7f6ee;
+  --line:#d6d5c6;
+  --ink:#1e2a20;
+  --deep:#16211a;
+  --deep-2:#101911;
+  --green:#2e4a37;
+  --green-hi:#24392b;
+  --lime:#9dc064;
+  --body:#4a5346;
+  --faint:#7a806f;
+  --on-dark:#cfccba;
+  --on-dark-dim:#9aa38f;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,5vw,40px);
+  --max:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:var(--green);text-decoration:none}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul{padding:0;list-style:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+::selection{background:var(--green);color:var(--cream)}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
+section[id]{scroll-margin-top:84px}
+.eyebrow{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--faint);
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{
+  content:"";width:28px;height:1px;background:currentColor;flex:none;opacity:.55;
+}
+.eyebrow.on-dark{color:var(--on-dark-dim)}
+h2.sec-title{
+  font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.028em;
+  font-weight:700;text-wrap:balance;
+}
+.lead{font-size:clamp(16px,1.5vw,18.5px);line-height:1.6;color:var(--body);text-wrap:pretty}
+
+/* ---------- buttons ---------- */
+.btn{
+  --bg:var(--green);--fg:var(--cream);
+  position:relative;display:inline-flex;align-items:center;gap:10px;
+  background:var(--bg);color:var(--fg);border:none;
+  padding:15px 27px;font-size:15.5px;font-weight:600;letter-spacing:.01em;
+  border-radius:2px;cursor:pointer;overflow:hidden;isolation:isolate;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+.btn::after{
+  content:"";position:absolute;inset:0;z-index:-1;background:var(--green-hi);
+  transform:translateY(101%);transition:transform .4s var(--ease);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px -12px rgba(22,33,26,.6)}
+.btn:hover::after{transform:translateY(0)}
+.btn .arw{transition:transform .35s var(--ease)}
+.btn:hover .arw{transform:translateX(4px)}
+.btn.light{--bg:var(--cream);--fg:var(--deep)}
+.btn.light::after{background:#fff}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:15px;font-weight:500;color:inherit;
+  padding:15px 4px;border-bottom:1px solid currentColor;
+  transition:gap .3s var(--ease),opacity .3s var(--ease);
+}
+.btn-ghost:hover{gap:15px;opacity:.72}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.hdr{
+  position:fixed;inset:0 0 auto;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:16px var(--pad);
+  color:var(--cream);
+  transition:background .45s var(--ease),color .45s var(--ease),
+             border-color .45s var(--ease),padding .45s var(--ease),
+             backdrop-filter .45s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.hdr.stuck{
+  background:rgba(242,241,232,.9);backdrop-filter:blur(14px) saturate(1.4);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);
+  color:var(--ink);border-bottom-color:var(--line);padding-block:11px;
+}
+.wordmark{
+  font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  font-weight:600;font-size:20px;line-height:1;letter-spacing:.24em;
+  text-transform:uppercase;color:inherit;white-space:nowrap;
+  transition:opacity .3s var(--ease);
+}
+.wordmark:hover{opacity:.72}
+.hdr.stuck .wordmark{font-size:18.5px}
+.lockup{display:inline-flex;flex-direction:column;align-items:flex-start;gap:10px}
+.lockup .sub{
+  display:flex;align-items:center;gap:11px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--on-dark-dim);
+}
+.lockup .sub::before,.lockup .sub::after{
+  content:"";width:20px;height:1px;background:currentColor;opacity:.45;
+}
+.hdr nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px)}
+.nav-link{
+  position:relative;color:inherit;font-size:14px;font-weight:500;letter-spacing:.01em;
+  padding-block:4px;
+}
+.nav-link::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;
+  background:currentColor;transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.nav-link:hover::after{transform:scaleX(1)}
+.hdr .btn{padding:11px 19px;font-size:14px}
+.hdr.stuck .btn{--bg:var(--green);--fg:var(--cream)}
+@media(max-width:800px){.nav-link{display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:min(100svh,880px);
+  display:flex;align-items:flex-end;
+  background:var(--deep);overflow:hidden;isolation:isolate;
+}
+.hero-media{position:absolute;inset:-2% 0 -8%;z-index:-2;will-change:transform}
+.hero-media picture{display:block;width:100%;height:100%}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;object-position:58% 92%;
+  animation:kb 26s var(--ease) infinite alternate;
+}
+@keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.13)}}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(to top,rgba(10,16,11,.62) 0%,rgba(12,19,14,.34) 22%,rgba(14,22,16,.06) 50%,rgba(14,22,16,0) 70%,rgba(14,22,16,.4) 100%),
+    linear-gradient(to right,rgba(10,16,11,.93) 0%,rgba(10,16,11,.8) 30%,rgba(10,16,11,.42) 58%,rgba(10,16,11,.06) 80%,rgba(10,16,11,0) 92%);
+}
+.hero-inner{
+  width:100%;max-width:var(--max);margin:0 auto;
+  padding:150px var(--pad) clamp(48px,7vh,84px);color:var(--cream);
+}
+.hero .eyebrow{color:#b9c3ab;margin-bottom:22px}
+h1.hero-h1{
+  font-size:clamp(40px,7.4vw,92px);line-height:.98;letter-spacing:-.035em;
+  font-weight:700;max-width:15ch;text-wrap:balance;
+}
+h1.hero-h1 .ln{display:block;overflow:hidden}
+h1.hero-h1 .ln > span{display:block;transform:translateY(105%);transition:transform 1.05s var(--ease)}
+.ready h1.hero-h1 .ln > span{transform:translateY(0)}
+h1.hero-h1 .ln:nth-child(2) > span{transition-delay:.1s}
+h1.hero-h1 .ln:nth-child(3) > span{transition-delay:.2s}
+h1.hero-h1 em{font-style:normal;color:var(--lime)}
+.hero-sub{
+  margin-top:26px;max-width:46ch;font-size:clamp(16.5px,1.9vw,20px);
+  line-height:1.55;color:#dedbcb;text-wrap:pretty;
+}
+.hero-cta{display:flex;gap:10px 22px;align-items:center;margin-top:34px;flex-wrap:wrap}
+.hero-cta .btn-ghost{color:#e5e2d3}
+.hero-note{margin-top:24px;font-size:12px;color:#8f9884;letter-spacing:.01em}
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ready .fade-up{opacity:1;transform:none}
+.ready .hero-sub{transition-delay:.34s}
+.ready .hero-cta{transition-delay:.44s}
+.ready .hero-note{transition-delay:.54s}
+.ready .hero .eyebrow{transition-delay:.24s}
+
+.scroll-cue{
+  position:absolute;right:var(--pad);bottom:clamp(48px,7vh,84px);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:#8f9884;
+  writing-mode:vertical-rl;
+}
+.scroll-cue i{
+  display:block;width:1px;height:56px;background:linear-gradient(to bottom,#8f9884,transparent);
+  position:relative;overflow:hidden;
+}
+.scroll-cue i::after{
+  content:"";position:absolute;inset:0;background:var(--lime);
+  animation:cue 2.4s var(--ease) infinite;
+}
+@keyframes cue{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+@media(max-width:900px){.scroll-cue{display:none}}
+
+/* ---------- ticker ---------- */
+.ticker{
+  background:var(--deep-2);color:#78826d;border-block:1px solid rgba(255,255,255,.07);
+  padding:13px 0;overflow:hidden;display:flex;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);
+}
+.ticker ul{
+  display:flex;gap:44px;flex:none;padding-right:44px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  white-space:nowrap;animation:slide 34s linear infinite;
+}
+.ticker li{display:flex;align-items:center;gap:44px}
+.ticker li::after{content:"";width:4px;height:4px;background:var(--lime);opacity:.7;border-radius:50%}
+@keyframes slide{to{transform:translateX(-100%)}}
+.ticker:hover ul{animation-play-state:paused}
+
+/* ============================================================
+   REVEAL PRIMITIVE
+   ============================================================ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.09s}
+.rv[data-d="2"]{transition-delay:.18s}
+.rv[data-d="3"]{transition-delay:.27s}
+.rv[data-d="4"]{transition-delay:.36s}
+
+/* ============================================================
+   01 — MAT vs GRASS
+   ============================================================ */
+.split{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(32px,6vw,80px);
+  padding-block:clamp(72px,11vh,124px);
+}
+.split-aside{align-self:start}
+@media(min-width:960px){.split-aside{position:sticky;top:118px}}
+.split-aside .eyebrow{margin-bottom:18px}
+.split-aside .sec-title{max-width:20ch}
+.split-aside .lead{margin-top:22px;max-width:34ch}
+@media(max-width:959px){.split{grid-template-columns:1fr;gap:36px}}
+
+.cmp{display:flex;flex-direction:column}
+.cmp-row{border-top:1px solid var(--line);padding-block:30px}
+.cmp-row:last-child{border-bottom:1px solid var(--line)}
+.cmp-head{display:flex;align-items:baseline;gap:16px;margin-bottom:20px}
+.cmp-num{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--faint);
+  flex:none;padding-top:3px;
+}
+.cmp-head h3{font-size:clamp(18px,2.1vw,23px);font-weight:600;letter-spacing:-.015em;line-height:1.22;text-wrap:balance}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:620px){.vs{grid-template-columns:1fr}}
+.side{
+  padding:19px 20px;border-radius:3px;position:relative;overflow:hidden;
+  transition:transform .5s var(--ease);
+}
+.side .tag{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+  margin-bottom:9px;
+}
+.side p{font-size:14.5px;line-height:1.58}
+.side.mat{background:#e7e5d7;color:#5b6155}
+.side.mat .tag{color:#61675a}
+.side.mat p{color:#5b6155}
+.side.grass{background:var(--green);color:#eef1e6}
+.side.grass .tag{color:var(--lime)}
+.side.grass p{color:#e2e8d8}
+.side.grass::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--lime);
+  transform:scaleY(0);transform-origin:top;transition:transform .7s var(--ease) .25s;
+}
+.cmp-row.in .side.grass::before{transform:scaleY(1)}
+.cmp-row:hover .side.grass{transform:translateY(-3px)}
+.ic{width:13px;height:13px;flex:none}
+
+/* ============================================================
+   02 — HOW IT WORKS (timeline)
+   ============================================================ */
+.how{background:var(--ink);color:var(--on-dark);position:relative}
+.how .split{padding-block:clamp(80px,12vh,130px)}
+.how .sec-title{color:var(--cream)}
+.how .lead{color:var(--on-dark)}
+.tl{position:relative;padding-left:clamp(34px,5vw,58px)}
+.tl-rail{
+  position:absolute;left:8px;top:14px;bottom:14px;width:1px;
+  background:rgba(255,255,255,.14);
+}
+.tl-rail span{
+  position:absolute;inset:0 auto 0 0;width:1px;background:var(--lime);
+  transform:scaleY(var(--p,0));transform-origin:top;
+  transition:transform .25s linear;
+}
+.step{position:relative;padding-bottom:clamp(42px,6vh,66px)}
+.step:last-child{padding-bottom:0}
+.step::before{
+  content:"";position:absolute;left:calc(-1 * clamp(34px,5vw,58px) + 4px);top:9px;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--ink);border:1px solid rgba(255,255,255,.3);
+  transition:background .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease);
+}
+.step.lit::before{background:var(--lime);border-color:var(--lime);box-shadow:0 0 0 5px rgba(157,192,100,.16)}
+.step .k{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--on-dark-dim);margin-bottom:12px;
+  transition:color .45s var(--ease);
+}
+.step.lit .k{color:var(--lime)}
+.step h3{
+  font-size:clamp(21px,2.6vw,29px);font-weight:600;letter-spacing:-.02em;
+  color:var(--cream);line-height:1.2;margin-bottom:12px;text-wrap:balance;
+}
+.step p{font-size:15.5px;line-height:1.62;max-width:48ch;color:var(--on-dark)}
+
+/* ============================================================
+   03 — MEMBERSHIP
+   ============================================================ */
+.mem{padding-block:clamp(72px,11vh,124px)}
+.mem .eyebrow{margin-bottom:18px}
+.mem .sec-title{max-width:19ch}
+
+.mem-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:44px;
+}
+.card{
+  grid-column:span 2;position:relative;overflow:hidden;
+  border:1px solid var(--line);border-radius:3px;background:var(--cream-3);
+  padding:26px 26px 28px;
+  transition:transform .5s var(--ease),border-color .5s var(--ease),box-shadow .5s var(--ease);
+}
+.card.feat{
+  grid-column:span 6;display:grid;grid-template-columns:1.05fr 1fr;
+  gap:clamp(18px,4vw,52px);align-items:end;
+}
+.card::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--green);
+  transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease);
+}
+.card:hover{transform:translateY(-4px);border-color:#c3c2b0;box-shadow:0 18px 44px -26px rgba(30,42,32,.4)}
+.card:hover::after{transform:scaleX(1)}
+.card .cic{
+  width:34px;height:34px;color:var(--green);margin-bottom:18px;
+  transition:transform .55s var(--ease);
+}
+.card:hover .cic{transform:translateY(-3px) rotate(-6deg)}
+.card h3{font-size:17.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.card p{font-size:14.5px;line-height:1.55;color:var(--body)}
+.card.feat h3{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.022em;margin-bottom:11px}
+.card.feat p{font-size:15.5px;max-width:40ch}
+@media(max-width:900px){
+  .mem-grid{grid-template-columns:repeat(2,1fr)}
+  .card{grid-column:span 1}
+  .card.feat{grid-column:span 2;grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .mem-grid{grid-template-columns:1fr}
+  .card,.card.feat{grid-column:span 1}
+}
+.mem-note{margin-top:20px;font-size:13px;color:var(--faint)}
+
+/* ============================================================
+   04 — FAQ
+   ============================================================ */
+.faq{padding-block:clamp(72px,11vh,124px);border-top:1px solid var(--line)}
+.faq-in{max-width:860px;margin:0 auto}
+.faq .eyebrow{margin-bottom:18px}
+.faq .sec-title{margin-bottom:38px}
+.q{border-top:1px solid var(--line)}
+.q:last-of-type{border-bottom:1px solid var(--line)}
+.q-h{margin:0;font:inherit}
+.q-btn{
+  width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
+  background:none;border:none;text-align:left;cursor:pointer;
+  padding:24px 2px;color:var(--ink);
+  font-size:clamp(16.5px,1.9vw,19px);font-weight:600;letter-spacing:-.012em;line-height:1.35;
+  transition:color .3s var(--ease);
+}
+.q-btn:hover{color:var(--green)}
+.q-sign{position:relative;width:15px;height:15px;flex:none;margin-top:5px}
+.q-sign::before,.q-sign::after{
+  content:"";position:absolute;background:currentColor;border-radius:1px;
+  transition:transform .45s var(--ease),opacity .45s var(--ease);
+}
+.q-sign::before{left:0;right:0;top:7px;height:1.5px}
+.q-sign::after{top:0;bottom:0;left:7px;width:1.5px}
+.q.open .q-sign::after{transform:rotate(90deg);opacity:0}
+.q.open .q-btn{color:var(--green)}
+.q-body{overflow:hidden;height:0;transition:height .5s var(--ease)}
+.q-body p{
+  padding:0 clamp(24px,6vw,56px) 26px 0;font-size:15.5px;line-height:1.65;color:var(--body);
+  max-width:64ch;
+}
+
+/* ============================================================
+   05 — WAITLIST (dark close)
+   ============================================================ */
+.wl{position:relative;background:var(--deep);color:var(--cream);overflow:hidden;isolation:isolate}
+.wl-bg{position:absolute;inset:0;z-index:-2}
+.wl-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 45%;opacity:.2;filter:saturate(.7)}
+.wl::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to bottom,var(--deep) 0%,rgba(22,33,26,.86) 40%,rgba(16,25,17,.97) 100%);
+}
+.wl-in{max-width:720px;margin:0 auto;padding:clamp(78px,12vh,124px) var(--pad)}
+.wl .eyebrow{color:var(--on-dark-dim);margin-bottom:18px}
+.wl h2{
+  font-size:clamp(30px,4.4vw,50px);line-height:1.05;letter-spacing:-.03em;
+  font-weight:700;color:var(--cream);text-wrap:balance;
+}
+.wl-lead{margin-top:16px;font-size:16.5px;line-height:1.62;color:var(--on-dark);max-width:52ch}
+
+.f-label{display:block;font-size:12.5px;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--on-dark-dim);margin-bottom:10px}
+.f-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.inp{
+  flex:1;min-width:230px;padding:15px 17px;font-size:16px;font-family:var(--sans);
+  color:var(--cream);background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.18);border-radius:2px;
+  transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.inp::placeholder{color:#7d8674}
+.inp:focus{outline:none;border-color:var(--lime);background:rgba(255,255,255,.09)}
+.inp:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.f-note{margin-top:15px;font-size:13px;color:#8b9480}
+.f-err{margin-top:11px;font-size:14px;color:#e6a08d}
+
+/* survey panel */
+.panel{
+  margin-top:34px;border:1px solid rgba(255,255,255,.16);border-radius:3px;
+  background:rgba(255,255,255,.045);backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);padding:clamp(24px,4vw,34px);
+}
+.panel-hd{display:flex;align-items:center;gap:11px;font-size:15.5px;font-weight:600;color:var(--lime)}
+.tick{
+  width:19px;height:19px;border-radius:50%;background:var(--lime);color:var(--deep);
+  display:grid;place-items:center;flex:none;
+  animation:pop .55s var(--ease) both;
+}
+@keyframes pop{from{transform:scale(0)}70%{transform:scale(1.14)}to{transform:scale(1)}}
+.panel-sub{margin-top:7px;font-size:14px;line-height:1.55;color:var(--on-dark-dim)}
+.prog-hd{display:flex;justify-content:space-between;align-items:center;margin:26px 0 9px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--on-dark-dim);text-transform:uppercase}
+.prog{height:2px;background:rgba(255,255,255,.14);border-radius:2px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--lime);width:16.6%;
+  transition:width .45s var(--ease)}
+.qwrap{position:relative;margin-top:26px;min-height:186px}
+.qstep{position:absolute;inset:0;opacity:0;transform:translateX(18px);pointer-events:none;
+  transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.qstep.active{position:relative;opacity:1;transform:none;pointer-events:auto}
+.qstep.leave{transform:translateX(-18px)}
+.q-title{font-size:17.5px;font-weight:600;color:var(--cream);line-height:1.3}
+.q-hint{margin-top:7px;font-size:13px;color:#8b9480}
+.opts{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
+.opt{
+  padding:11px 17px;font-size:14.5px;font-weight:500;cursor:pointer;
+  color:var(--on-dark);background:transparent;
+  border:1px solid rgba(255,255,255,.2);border-radius:2px;
+  transition:all .28s var(--ease);
+}
+.opt:hover{border-color:rgba(255,255,255,.45);color:var(--cream);transform:translateY(-1px)}
+.opt[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:var(--deep);font-weight:600}
+.q-sublabel{display:block;margin:22px 0 10px;font-size:14.5px;font-weight:600;color:var(--cream)}
+.inp.sm{max-width:340px;min-width:0;width:100%;flex:none}
+.nav-btns{display:flex;gap:11px;align-items:center;margin-top:28px}
+.btn-back{
+  background:transparent;border:1px solid rgba(255,255,255,.22);color:var(--on-dark);
+  padding:13px 22px;font-size:14.5px;font-weight:500;border-radius:2px;cursor:pointer;
+  transition:all .28s var(--ease);
+}
+.btn-back:hover{border-color:var(--lime);color:var(--cream)}
+.btn-next{--bg:var(--lime);--fg:var(--deep);padding:13px 26px;font-size:14.5px}
+.btn-next::after{background:#b0d178}
+.skip{margin-left:auto;font-size:13px;color:#8b9480;background:none;border:none;cursor:pointer;
+  text-decoration:underline;text-underline-offset:3px;transition:color .3s var(--ease)}
+.skip:hover{color:var(--cream)}
+.done{text-align:left}
+.done .panel-hd{font-size:17px}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.ftr{background:var(--deep-2);color:var(--on-dark-dim);border-top:1px solid rgba(255,255,255,.08)}
+.ftr-in{
+  display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;
+  padding-block:38px;
+}
+.ftr-in .wordmark{color:var(--cream)}
+.ftr nav{display:flex;gap:22px;flex-wrap:wrap}
+.ftr a{color:var(--on-dark-dim);font-size:13.5px;transition:color .3s var(--ease)}
+.ftr a:hover{color:var(--cream)}
+.ftr small{display:block;font-size:12px;color:#6b7462;padding-bottom:34px;line-height:1.6}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001s!important;animation-iteration-count:1!important;
+    transition-duration:.001s!important;
+  }
+  .rv,.fade-up{opacity:1!important;transform:none!important}
+  h1.hero-h1 .ln > span{transform:none!important}
+  .hero-media img{animation:none}
+  .ticker ul{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== HEADER ============================== -->
+<header class="hdr" id="hdr">
+  <a class="wordmark" href="#top">Fescue Club</a>
+  <nav aria-label="Main">
+    <a class="nav-link" href="#grass">Why grass</a>
+    <a class="nav-link" href="#how">How it works</a>
+    <a class="nav-link" href="#membership">Membership</a>
+    <a class="nav-link" href="#faq">FAQ</a>
+    <a class="btn" href="#waitlist">Join the waitlist</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="hero-media" id="heroMedia">
+    <picture>
+      <source media="(max-width:700px)" srcset="assets/hero-bay-mobile.jpg">
+      <img src="assets/hero-bay.jpg" alt="A player finishing a swing in an indoor simulator bay, hitting off a section of real grass turf with visible divots on the floor." width="1535" height="1024" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow fade-up">New York City · Fall 2027*</p>
+    <h1 class="hero-h1">
+      <span class="ln"><span>Indoor golf on</span></span>
+      <span class="ln"><span><em>real grass</em>,</span></span>
+      <span class="ln"><span>in New York City.</span></span>
+    </h1>
+    <p class="hero-sub fade-up">The first indoor golf club where every swing comes off living turf — not a mat. Year round, in the city.</p>
+    <div class="hero-cta fade-up">
+      <a class="btn light" href="#waitlist">Join the waitlist <span class="arw" aria-hidden="true">→</span></a>
+      <a class="btn-ghost" href="#grass">Why real grass matters <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="hero-note fade-up">*Target opening. Plans and timing may change.</p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- ============================== TICKER ============================== -->
+<div class="ticker" aria-hidden="true">
+  <ul>
+    <li>Real grass</li><li>Real divots</li><li>Honest feedback</li><li>TrackMan in every bay</li>
+    <li>Climate controlled</li><li>Open all winter</li><li>No mats. Ever.</li>
+  </ul>
+  <ul>
+    <li>Real grass</li><li>Real divots</li><li>Honest feedback</li><li>TrackMan in every bay</li>
+    <li>Climate controlled</li><li>Open all winter</li><li>No mats. Ever.</li>
+  </ul>
+</div>
+
+<!-- ============================== 01 — WHY GRASS ============================== -->
+<section id="grass">
+  <div class="wrap split">
+    <div class="split-aside">
+      <p class="eyebrow rv">01 — The problem with mats</p>
+      <h2 class="sec-title rv" data-d="1">Every simulator in New York puts you on a synthetic mat.</h2>
+      <p class="lead rv" data-d="2">A mat is a forgiving surface pretending to be an honest one. It flatters your contact and hides the information you came to practice for.</p>
+    </div>
+
+    <div class="cmp">
+      <div class="cmp-row rv">
+        <div class="cmp-head"><span class="cmp-num">01</span><h3>Fat shots skid instead of digging</h3></div>
+        <div class="vs">
+          <div class="side mat">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7"/></svg>On a mat</span>
+            <p>A heavy strike bounces off the surface and flies anyway. The mat absorbs the mistake for you.</p>
+          </div>
+          <div class="side grass">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>On real grass</span>
+            <p>The club digs. You feel it in your hands and see it in the ball flight — immediately.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-row rv">
+        <div class="cmp-head"><span class="cmp-num">02</span><h3>Mishits aren't punished honestly</h3></div>
+        <div class="vs">
+          <div class="side mat">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7"/></svg>On a mat</span>
+            <p>Contact a course would expose gets quietly forgiven, so your numbers read better than your swing.</p>
+          </div>
+          <div class="side grass">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>On real grass</span>
+            <p>Turf responds the way the course will. What you practice is what you'll actually shoot.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-row rv">
+        <div class="cmp-head"><span class="cmp-num">03</span><h3>There's no divot to read</h3></div>
+        <div class="vs">
+          <div class="side mat">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7"/></svg>On a mat</span>
+            <p>Nothing is left behind. The single richest piece of feedback in golf simply doesn't exist.</p>
+          </div>
+          <div class="side grass">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>On real grass</span>
+            <p>Depth, direction and start point of every divot tell you exactly what the club did.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-row rv">
+        <div class="cmp-head"><span class="cmp-num">04</span><h3>Club-to-turf interaction is wrong</h3></div>
+        <div class="vs">
+          <div class="side mat">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7"/></svg>On a mat</span>
+            <p>How the sole enters and exits synthetic fibre doesn't match grass. You're grooving a different move.</p>
+          </div>
+          <div class="side grass">
+            <span class="tag"><svg class="ic" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 7.5l3 3 6-7"/></svg>On real grass</span>
+            <p>Practise the lie you'll actually play, at the surface you'll actually play it from.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 02 — HOW IT WORKS ============================== -->
+<section class="how" id="how">
+  <div class="wrap split">
+    <div class="split-aside">
+      <p class="eyebrow on-dark rv">02 — Real grass, indoors</p>
+      <h2 class="sec-title rv" data-d="1">How it works</h2>
+      <p class="lead rv" data-d="2">Grass doesn't have to survive indoors. It only has to arrive fresh.</p>
+    </div>
+
+    <div class="tl" id="tl">
+      <div class="tl-rail" aria-hidden="true"><span id="rail"></span></div>
+
+      <div class="step rv">
+        <p class="k">01 — Grown outside</p>
+        <h3>Cultivated off-site, under real conditions</h3>
+        <p>Our turf is grown by greenhouse and nursery partners in natural light and open air — the same way the grass on a course grows. Nothing is asked to live in a windowless room.</p>
+      </div>
+
+      <div class="step rv" data-d="1">
+        <p class="k">02 — Rotated in</p>
+        <h3>Fresh turf, brought into the bays</h3>
+        <p>Living grass is delivered and rotated through the hitting bays on a schedule, so every session is played off healthy turf. Used sections go back out to recover and regrow.</p>
+      </div>
+
+      <div class="step rv" data-d="2">
+        <p class="k">03 — Playable year-round</p>
+        <h3>Climate-controlled, every month</h3>
+        <p>Real-turf practice in the middle of a New York winter, without a 60–90 minute drive out of the city in each direction. The season stops being a thing you plan around.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 03 — MEMBERSHIP ============================== -->
+<section id="membership">
+  <div class="wrap mem">
+    <p class="eyebrow rv">03 — Membership</p>
+    <h2 class="sec-title rv" data-d="1">Built around serious practice.</h2>
+
+    <div class="mem-grid">
+      <div class="card feat rv">
+        <div>
+          <svg class="cic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="2.5" y="5" width="27" height="17" rx="1.5"/><path d="M2.5 22h27M11 27h10M16 22v5"/>
+            <path d="M7 17.5c2.5-3 5-3 7 0s5.5 2 8-1.5"/>
+          </svg>
+          <h3>Simulator bays on real grass</h3>
+        </div>
+        <p>TrackMan simulation in every bay. Warm up on turf, play a full round, or grind wedges — every shot off living grass.</p>
+      </div>
+
+      <div class="card rv" data-d="1">
+        <svg class="cic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M11 11V7.5a5 5 0 0 1 10 0V11"/><rect x="6.5" y="11" width="19" height="16" rx="2"/><path d="M16 17v4"/>
+        </svg>
+        <h3>Bag storage</h3>
+        <p>Leave your clubs at the club. Show up with nothing but a glove.</p>
+      </div>
+
+      <div class="card rv" data-d="2">
+        <svg class="cic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="4.5" y="7" width="23" height="21" rx="2"/><path d="M4.5 13h23M11 4v5M21 4v5"/><path d="M11 19h4M11 23h9"/>
+        </svg>
+        <h3>Advance booking</h3>
+        <p>Reserve bays ahead through our app — including prime winter evenings.</p>
+      </div>
+
+      <div class="card rv" data-d="3">
+        <svg class="cic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="16" cy="9" r="4.5"/><path d="M6.5 27c0-5.2 4.3-8.5 9.5-8.5s9.5 3.3 9.5 8.5"/><path d="M23 13.5l5 3-5 3" />
+        </svg>
+        <h3>Lessons and fittings</h3>
+        <p>In-person instruction and club fitting, on the surface you actually play.</p>
+      </div>
+    </div>
+    <p class="mem-note rv">Membership terms are not final.</p>
+  </div>
+</section>
+
+<!-- ============================== 04 — FAQ ============================== -->
+<section class="faq" id="faq">
+  <div class="wrap faq-in">
+    <p class="eyebrow rv">04 — Questions</p>
+    <h2 class="sec-title rv" data-d="1">Frequently asked questions</h2>
+
+    <div class="q open">
+      <h3 class="q-h"><button class="q-btn" aria-expanded="true">When does the club open?<span class="q-sign" aria-hidden="true"></span></button></h3>
+      <div class="q-body"><p>We're targeting our first opening in New York City in fall 2027. Timing may change as plans are finalised — the waitlist hears updates first.</p></div>
+    </div>
+    <div class="q">
+      <h3 class="q-h"><button class="q-btn" aria-expanded="false">How does real grass survive indoors?<span class="q-sign" aria-hidden="true"></span></button></h3>
+      <div class="q-body"><p>It doesn't have to. The turf is grown off-site under natural conditions with our greenhouse and nursery partners, then delivered and rotated fresh into the bays.</p></div>
+    </div>
+    <div class="q">
+      <h3 class="q-h"><button class="q-btn" aria-expanded="false">How much does membership cost?<span class="q-sign" aria-hidden="true"></span></button></h3>
+      <div class="q-body"><p>Pricing is being finalised, but we estimate between $300 and $500 per month. Waitlist members will see membership details first, with access to discounted founding rates.</p></div>
+    </div>
+    <div class="q">
+      <h3 class="q-h"><button class="q-btn" aria-expanded="false">What comes with membership?<span class="q-sign" aria-hidden="true"></span></button></h3>
+      <div class="q-body"><p>Access to simulator bays on real grass with TrackMan simulation, bag storage, advance booking through our app, and in-person lessons and fittings. Terms are not final.</p></div>
+    </div>
+    <div class="q">
+      <h3 class="q-h"><button class="q-btn" aria-expanded="false">Is there indoor golf on real grass in NYC today?<span class="q-sign" aria-hidden="true"></span></button></h3>
+      <div class="q-body"><p>No. Every existing indoor golf venue in New York puts players on synthetic mats. Real grass indoors is proven at the professional level — the TGL league plays off it in Florida — but no consumer facility offers it yet.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 05 — WAITLIST ============================== -->
+<section class="wl" id="waitlist">
+  <div class="wl-bg" aria-hidden="true">
+    <img src="assets/hero-bay.jpg" alt="" loading="lazy">
+  </div>
+  <div class="wl-in">
+    <p class="eyebrow rv">05 — Sign up</p>
+    <h2 class="rv" data-d="1">Join the waitlist</h2>
+    <p class="wl-lead rv" data-d="2">Be the first to hear about opening plans and membership details. Waitlist members may get early access to discounted founding rates.</p>
+
+    <!-- STEP 1: email -->
+    <form id="emailForm" class="rv" data-d="3" aria-label="Waitlist signup, step 1 of 2" novalidate>
+      <div class="f-row" style="display:block">
+        <label class="f-label" for="wl-email">Email address</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <input class="inp" id="wl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          <button class="btn btn-next" type="submit">Join the list <span class="arw" aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <input type="text" id="wl-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"
+             aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <p class="f-err" id="emailErr" role="alert" hidden></p>
+      <p class="f-note">Joining the list is free and carries no commitment.</p>
+    </form>
+
+    <!-- STEP 2: survey -->
+    <div class="panel" id="panel" hidden>
+      <div id="surveyLive">
+        <p class="panel-hd">
+          <span class="tick" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 7.5l3 3 6-7"/></svg></span>
+          You're on the list.
+        </p>
+        <p class="panel-sub">A few optional questions help us plan bays, hours and membership. Skip any you like.</p>
+
+        <div class="prog-hd">
+          <span>Question <span id="stepNum">1</span> of 6</span>
+          <span id="stepName">Handicap</span>
+        </div>
+        <div class="prog" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" aria-label="Question progress">
+          <i id="progFill"></i>
+        </div>
+
+        <div class="qwrap" id="qwrap">
+          <!-- Q1 -->
+          <div class="qstep active" data-step="0">
+            <p class="q-title" id="q1">What's your handicap?</p>
+            <p class="q-hint">No handicap? Estimate how many shots over par you typically play.</p>
+            <div class="opts" role="group" aria-labelledby="q1" data-key="handicap" data-multi="false"></div>
+          </div>
+          <!-- Q2 -->
+          <div class="qstep" data-step="1">
+            <label class="q-title" for="q-zip">What's your ZIP code?</label>
+            <p class="q-hint">Helps us understand where demand is concentrated.</p>
+            <div style="margin-top:17px"><input class="inp sm" id="q-zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="e.g. 10011" data-key="zip"></div>
+          </div>
+          <!-- Q3 -->
+          <div class="qstep" data-step="2">
+            <p class="q-title" id="q3">Where do you currently practice in winter?</p>
+            <p class="q-hint">Select all that apply</p>
+            <div class="opts" role="group" aria-labelledby="q3" data-key="venues" data-multi="true"></div>
+          </div>
+          <!-- Q4 -->
+          <div class="qstep" data-step="3">
+            <p class="q-title" id="q4">Would you pay $450 a month for club access?</p>
+            <div class="opts" role="group" aria-labelledby="q4" data-key="price" data-multi="false"></div>
+            <label class="q-sublabel" for="q-max">What's the most you'd be willing to pay?</label>
+            <input class="inp sm" id="q-max" type="text" placeholder="e.g. $400 / month" data-key="maxPrice">
+          </div>
+          <!-- Q5 -->
+          <div class="qstep" data-step="4">
+            <p class="q-title" id="q5">Would you put down a refundable $100 to lock in a founding rate?</p>
+            <div class="opts" role="group" aria-labelledby="q5" data-key="deposit" data-multi="false"></div>
+          </div>
+          <!-- Q6 -->
+          <div class="qstep" data-step="5">
+            <p class="q-title" id="q6">Which add-ons interest you?</p>
+            <p class="q-hint">Select all that apply</p>
+            <div class="opts" role="group" aria-labelledby="q6" data-key="addons" data-multi="true"></div>
+            <label class="q-sublabel" for="q-other">Anything else you'd want us to offer?</label>
+            <input class="inp sm" id="q-other" type="text" placeholder="Other add-ons" data-key="otherAddon" style="max-width:440px">
+          </div>
+        </div>
+
+        <div class="nav-btns">
+          <button class="btn-back" id="btnBack" type="button" hidden>Back</button>
+          <button class="btn btn-next" id="btnNext" type="button">Next <span class="arw" aria-hidden="true">→</span></button>
+          <button class="skip" id="btnSkip" type="button">Skip this question</button>
+        </div>
+        <p class="f-err" id="surveyErr" role="alert" hidden></p>
+      </div>
+
+      <div id="surveyDone" class="done" hidden>
+        <p class="panel-hd">
+          <span class="tick" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 7.5l3 3 6-7"/></svg></span>
+          Thank you.
+        </p>
+        <p class="panel-sub" style="font-size:15px;color:var(--on-dark)">You're on the waitlist. We'll be in touch as opening plans and membership details take shape.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-in">
+      <span class="lockup">
+        <span class="wordmark">Fescue Club</span>
+        <span class="sub">New York · Est. 2027</span>
+      </span>
+      <nav aria-label="Footer">
+        <a href="#grass">Why grass</a>
+        <a href="#how">How it works</a>
+        <a href="#membership">Membership</a>
+        <a href="#faq">FAQ</a>
+        <a href="#waitlist">Waitlist</a>
+      </nav>
+    </div>
+    <small>
+      New York City · Target opening fall 2027. Plans, pricing and membership terms are not final and may change.<br>
+    </small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- hero entrance ---------- */
+  requestAnimationFrame(function(){ document.body.classList.add("ready"); });
+
+  /* ---------- sticky header ---------- */
+  var hdr = document.getElementById("hdr");
+  var hero = document.querySelector(".hero");
+  new IntersectionObserver(function(es){
+    hdr.classList.toggle("stuck", !es[0].isIntersecting);
+  },{rootMargin:"-72px 0px 0px 0px",threshold:0}).observe(hero);
+
+  /* ---------- scroll reveals ---------- */
+  var revealer = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add("in"); revealer.unobserve(e.target); }
+    });
+  },{rootMargin:"0px 0px -12% 0px",threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){ revealer.observe(el); });
+
+  /* ---------- hero parallax ---------- */
+  var media = document.getElementById("heroMedia");
+  if(!reduce && media){
+    var raf = false;
+    addEventListener("scroll", function(){
+      if(raf) return; raf = true;
+      requestAnimationFrame(function(){
+        var y = scrollY;
+        if(y < innerHeight * 1.2) media.style.transform = "translate3d(0," + (y * .18).toFixed(1) + "px,0)";
+        raf = false;
+      });
+    }, {passive:true});
+  }
+
+
+  /* ---------- timeline rail + lit steps ---------- */
+  var tl = document.getElementById("tl"), rail = document.getElementById("rail");
+  var steps = tl ? [].slice.call(tl.querySelectorAll(".step")) : [];
+  if(tl){
+    var tick2 = false;
+    var draw = function(){
+      var r = tl.getBoundingClientRect(), mid = innerHeight * .58;
+      var p = (mid - r.top) / r.height;
+      rail.style.setProperty("--p", Math.max(0, Math.min(1, p)));
+      steps.forEach(function(s){
+        s.classList.toggle("lit", s.getBoundingClientRect().top < mid);
+      });
+    };
+    addEventListener("scroll", function(){
+      if(tick2) return; tick2 = true;
+      requestAnimationFrame(function(){ draw(); tick2 = false; });
+    }, {passive:true});
+    addEventListener("resize", draw, {passive:true});
+    draw();
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".q").forEach(function(q){
+    var btn = q.querySelector(".q-btn"), body = q.querySelector(".q-body");
+    var set = function(open){
+      q.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      body.style.height = open ? body.scrollHeight + "px" : "0px";
+    };
+    if(q.classList.contains("open")) requestAnimationFrame(function(){ set(true); });
+    btn.addEventListener("click", function(){ set(!q.classList.contains("open")); });
+    addEventListener("resize", function(){
+      if(q.classList.contains("open")) body.style.height = body.scrollHeight + "px";
+    }, {passive:true});
+  });
+
+  /* ============================================================
+     WAITLIST — step 1 (email) + step 2 (6-question survey)
+     ============================================================ */
+  /* ------------------------------------------------------------
+     FORMSPREE — paste the golf form's ID between the quotes.
+     Formspree dashboard -> New Form -> copy the 8 chars from the
+     endpoint URL (https://formspree.io/f/XXXXXXXX).
+     Use a NEW form, not the consulting one, so waitlist signups
+     don't mix into consulting enquiries.
+     Left empty, the page still works and stores locally only.
+     ------------------------------------------------------------ */
+  var FORMSPREE_ID = "mvzelyeb";
+  var ENDPOINT = FORMSPREE_ID ? "https://formspree.io/f/" + FORMSPREE_ID : null;
+
+  var STORE_EMAIL = "fescue_waitlist_email", STORE_ANSWERS = "fescue_waitlist_answers";
+  var answers = { handicap:null, zip:"", venues:[], price:null, maxPrice:"", deposit:null, addons:[], otherAddon:"" };
+  var leadEmail = "";
+
+  /* POST JSON to Formspree; resolves on success, rejects with a message */
+  function send(payload){
+    if(!ENDPOINT){
+      console.warn("[waitlist] FORMSPREE_ID not set — stored locally only:", payload);
+      return Promise.resolve();
+    }
+    return fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function(r){
+      if(r.ok) return;
+      return r.json().catch(function(){ return null; }).then(function(j){
+        var m = j && j.errors && j.errors.map(function(e){ return e.message; }).join(", ");
+        throw new Error(m || "Something went wrong. Please try again.");
+      });
+    }, function(){
+      throw new Error("Network error. Please check your connection and try again.");
+    });
+  }
+
+  function busy(btn, on, label){
+    btn.disabled = on;
+    btn.style.opacity = on ? ".65" : "";
+    btn.style.pointerEvents = on ? "none" : "";
+    if(on){ btn.dataset.prev = btn.innerHTML; btn.textContent = label; }
+    else if(btn.dataset.prev){ btn.innerHTML = btn.dataset.prev; delete btn.dataset.prev; }
+  }
+
+  var OPTIONS = {
+    handicap: ["Scratch–5","6–10","11–15","16–20","21–30","30+","I don't keep one"],
+    venues:   ["Five Iron","Chelsea Piers","X-Golf","Another simulator venue","I drive out of the city","I don't practice in winter"],
+    price:    ["Yes","Maybe","No"],
+    deposit:  ["Yes","Maybe","No"],
+    addons:   ["Fittings and lessons","Gym and fitness center","Group and party reservations"]
+  };
+  var STEP_NAMES = ["Handicap","Location","Winter practice","Pricing","Deposit","Add-ons"];
+
+  var form = document.getElementById("emailForm"),
+      panel = document.getElementById("panel"),
+      errEl = document.getElementById("emailErr"),
+      live = document.getElementById("surveyLive"),
+      doneEl = document.getElementById("surveyDone");
+
+  /* build option buttons */
+  document.querySelectorAll(".opts").forEach(function(group){
+    var key = group.dataset.key, multi = group.dataset.multi === "true";
+    OPTIONS[key].forEach(function(label){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "opt"; b.textContent = label;
+      b.setAttribute("aria-pressed","false");
+      b.addEventListener("click", function(){
+        if(multi){
+          var i = answers[key].indexOf(label);
+          if(i > -1) answers[key].splice(i,1); else answers[key].push(label);
+        } else {
+          answers[key] = answers[key] === label ? null : label;
+        }
+        group.querySelectorAll(".opt").forEach(function(o){
+          var on = multi ? answers[key].indexOf(o.textContent) > -1 : answers[key] === o.textContent;
+          o.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+      });
+      group.appendChild(b);
+    });
+  });
+
+  /* free-text inputs */
+  document.querySelectorAll("[data-key]").forEach(function(el){
+    if(el.tagName !== "INPUT") return;
+    el.addEventListener("input", function(){ answers[el.dataset.key] = el.value; });
+  });
+
+  /* ---- step 1 submit ---- */
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var email = document.getElementById("wl-email").value.trim();
+    if(!/^\S+@\S+\.\S+$/.test(email)){
+      errEl.textContent = "Please enter a valid email address.";
+      errEl.hidden = false;
+      return;
+    }
+    errEl.hidden = true;
+    if(document.getElementById("wl-gotcha").value) return;   /* bot */
+
+    /* STEP 1 — the lead. Sent on its own so an abandoned survey
+       still captures the email. */
+    var submitBtn = form.querySelector('button[type="submit"]');
+    busy(submitBtn, true, "Joining…");
+    send({
+      _subject: "Fescue Club waitlist — " + email,
+      stage: "waitlist",
+      email: email
+    }).then(function(){
+      leadEmail = email;
+      try { localStorage.setItem(STORE_EMAIL, email); } catch(e){}
+      openSurvey();
+    }).catch(function(err){
+      errEl.textContent = err.message;
+      errEl.hidden = false;
+    }).then(function(){
+      busy(submitBtn, false);
+    });
+  });
+
+  function openSurvey(){
+    form.hidden = true;
+    panel.hidden = false;
+    panel.classList.add("in");
+    if(!reduce) panel.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  /* ---- survey navigation ---- */
+  var step = 0, TOTAL = 6;
+  var qsteps = [].slice.call(document.querySelectorAll(".qstep"));
+  var btnBack = document.getElementById("btnBack"),
+      btnNext = document.getElementById("btnNext"),
+      btnSkip = document.getElementById("btnSkip"),
+      progFill = document.getElementById("progFill"),
+      stepNum = document.getElementById("stepNum"),
+      stepName = document.getElementById("stepName"),
+      prog = progFill.parentElement;
+
+  function render(dir){
+    qsteps.forEach(function(s, i){
+      s.classList.toggle("leave", dir < 0 ? i > step : i < step);
+      s.classList.toggle("active", i === step);
+    });
+    progFill.style.width = ((step + 1) / TOTAL * 100) + "%";
+    prog.setAttribute("aria-valuenow", step + 1);
+    stepNum.textContent = step + 1;
+    stepName.textContent = STEP_NAMES[step];
+    btnBack.hidden = step === 0;
+    btnNext.innerHTML = step === TOTAL - 1
+      ? 'Submit answers <span class="arw" aria-hidden="true">→</span>'
+      : 'Next <span class="arw" aria-hidden="true">→</span>';
+    btnSkip.textContent = step === TOTAL - 1 ? "Skip and finish" : "Skip this question";
+  }
+
+  btnBack.addEventListener("click", function(){
+    if(step > 0){ step--; render(-1); }
+  });
+  function advance(){
+    if(step < TOTAL - 1){ step++; render(1); } else submitAll();
+  }
+  btnNext.addEventListener("click", advance);
+  btnSkip.addEventListener("click", advance);
+
+  function submitAll(){
+    /* If every question was skipped there's nothing to report, and the
+       email is already captured by step 1 — don't burn a submission. */
+    var answered = answers.handicap || answers.zip || answers.venues.length ||
+                   answers.price || answers.maxPrice || answers.deposit ||
+                   answers.addons.length || answers.otherAddon;
+    if(!answered){
+      live.hidden = true; doneEl.hidden = false;
+      return;
+    }
+
+    /* STEP 2 — the survey. Arrays flattened to strings so the
+       notification email and CSV export stay readable.
+       Empty values mean the question was skipped. */
+    busy(btnNext, true, "Submitting…");
+    send({
+      _subject: "Fescue Club survey — " + (leadEmail || "unknown"),
+      stage: "survey",
+      email: leadEmail,
+      handicap: answers.handicap || "",
+      zip: answers.zip || "",
+      winter_practice: answers.venues.join(", "),
+      would_pay_450: answers.price || "",
+      max_price: answers.maxPrice || "",
+      would_deposit_100: answers.deposit || "",
+      addons: answers.addons.join(", "),
+      other_addon: answers.otherAddon || ""
+    }).then(function(){
+      try { localStorage.setItem(STORE_ANSWERS, JSON.stringify(answers)); } catch(e){}
+      live.hidden = true;
+      doneEl.hidden = false;
+    }).catch(function(err){
+      var e = document.getElementById("surveyErr");
+      e.textContent = err.message;
+      e.hidden = false;
+    }).then(function(){
+      busy(btnNext, false);
+    });
+  }
+
+  /* ---- returning visitor ---- */
+  try {
+    var saved = localStorage.getItem(STORE_EMAIL);
+    if(saved){
+      leadEmail = saved;
+      form.hidden = true; panel.hidden = false;
+      if(localStorage.getItem(STORE_ANSWERS)){ live.hidden = true; doneEl.hidden = false; }
+    }
+  } catch(e){}
+
+  render(1);
+})();
+</script>
+</body>
+</html>
