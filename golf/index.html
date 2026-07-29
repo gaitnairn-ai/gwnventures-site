@@ -18,20 +18,20 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero-bay.jpg">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"SportsActivityLocation","name":"Fescue Club","url":"https://gwnventures.com/golf/","description":"A private indoor golf club in New York City with real grass in every hitting bay. Turf is grown off site and rotated through the bays as it wears. Every bay is fitted with TrackMan. Target opening 2027.","address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"},"keywords":"indoor golf NYC, real grass indoor golf, year-round golf practice New York, grass driving range NYC"},
 {"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What is Fescue Club?","acceptedAnswer":{"@type":"Answer","text":"A private indoor golf club in New York City with real grass in every hitting bay. Target opening 2027."}},
-{"@type":"Question","name":"How does grass grow indoors?","acceptedAnswer":{"@type":"Answer","text":"It isn't grown indoors. Turf is cultivated off site by greenhouse and nursery partners and rotated into the bays as it wears. Worn turf returns to the nursery to recover."}},
-{"@type":"Question","name":"Why real grass instead of a mat?","acceptedAnswer":{"@type":"Answer","text":"Turf responds to the club the way a course does. A mat allows a heavy strike to skid rather than dig, and leaves no divot to read. Practice on grass reflects the shot you would actually play."}},
-{"@type":"Question","name":"When does the club open?","acceptedAnswer":{"@type":"Answer","text":"We are targeting 2027 in New York City. Timing may change."}},
-{"@type":"Question","name":"Where will it be located?","acceptedAnswer":{"@type":"Answer","text":"New York City. The site will be announced to the waitlist first."}},
-{"@type":"Question","name":"What will membership cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is not final. Our current estimate is $300 to $500 per month. Founding rates will be offered to waitlist members first."}},
-{"@type":"Question","name":"Is anyone else doing this?","acceptedAnswer":{"@type":"Answer","text":"No indoor venue in New York currently offers real grass. Playing off grass indoors is established at the professional level — the TGL league plays on it in Florida."}}
+{"@type":"Question","name":"What is Fescue Club?","acceptedAnswer":{"@type":"Answer","text":"A private indoor golf club in New York City, with real grass in every hitting bay. Target opening is 2027."}},
+{"@type":"Question","name":"How does grass grow indoors?","acceptedAnswer":{"@type":"Answer","text":"The turf is grown off site with greenhouse and nursery partners, then rotated into the bays as it wears. Worn turf returns to the nursery to recover while fresh turf takes its place."}},
+{"@type":"Question","name":"Why real grass instead of a mat?","acceptedAnswer":{"@type":"Answer","text":"A mat lets a heavy strike skid, so the ball flies anyway and there is nothing to learn from it. Grass does not forgive that, and it leaves a divot worth reading. Practising on turf means an indoor session reflects how the ball will actually behave on the course."}},
+{"@type":"Question","name":"When does the club open?","acceptedAnswer":{"@type":"Answer","text":"Target opening is 2027 in New York City. Timing may move, and the waitlist will hear first."}},
+{"@type":"Question","name":"Where will it be located?","acceptedAnswer":{"@type":"Answer","text":"In New York City. The site will be announced to the waitlist before it goes public."}},
+{"@type":"Question","name":"What will membership cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is not yet set. The current estimate is $300 to $500 a month, and waitlist members will be offered founding rates first."}},
+{"@type":"Question","name":"Is anyone else doing this?","acceptedAnswer":{"@type":"Answer","text":"Not in New York — every indoor venue here puts players on a mat. Real grass indoors is already proven at the top of the game: the TGL league plays on it in Florida."}}
 ]}]}
 </script>
 
@@ -88,7 +88,7 @@ section[id]{scroll-margin-top:84px}
 .label::before{content:"";width:26px;height:1px;background:currentColor;flex:none;opacity:.5}
 
 h2.title{
-  font-family:var(--serif);font-weight:600;
+  font-family:var(--serif);font-weight:700;
   font-size:clamp(27px,3.5vw,42px);line-height:1.14;letter-spacing:.002em;
   text-wrap:balance;
 }
@@ -187,9 +187,9 @@ h2.title{
 }
 .hero .label{color:#b9c3ab;margin-bottom:24px}
 h1.hero-h1{
-  font-family:var(--serif);font-weight:500;
-  font-size:clamp(38px,6.6vw,84px);line-height:1.04;letter-spacing:.004em;
-  max-width:17ch;text-wrap:balance;
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(42px,7.4vw,94px);line-height:1;letter-spacing:-.012em;
+  max-width:16ch;text-wrap:balance;
 }
 h1.hero-h1 .ln{display:block;overflow:hidden}
 h1.hero-h1 .ln > span{display:block;transform:translateY(105%);transition:transform 1.05s var(--ease)}
@@ -248,24 +248,6 @@ h1.hero-h1 .ln:nth-child(2) > span{transition-delay:.09s}
 @media(max-width:900px){.club-grid{grid-template-columns:1fr;gap:26px}}
 .club-grid .title{max-width:22ch}
 .club-body{max-width:52ch}
-
-/* dark facts band */
-.facts{background:var(--ink);color:var(--on-dark)}
-.facts-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;padding-block:clamp(52px,8vh,76px);
-}
-.fact{padding-inline:clamp(16px,2.6vw,34px);border-left:1px solid rgba(255,255,255,.12)}
-.fact:first-child{border-left:0;padding-left:0}
-.fact h3{
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  font-weight:500;color:var(--cream);margin-bottom:14px;
-}
-.fact p{font-size:15px;line-height:1.6;color:var(--on-dark);max-width:26ch}
-@media(max-width:760px){
-  .facts-grid{grid-template-columns:1fr;gap:30px}
-  .fact{border-left:0;padding-left:0}
-}
 
 /* ============================================================
    MEMBERSHIP
@@ -342,7 +324,7 @@ h1.hero-h1 .ln:nth-child(2) > span{transition-delay:.09s}
 .wl-in{max-width:700px;margin:0 auto;padding:clamp(76px,12vh,118px) var(--pad)}
 .wl .label{color:var(--on-dark-dim);margin-bottom:20px}
 .wl h2{
-  font-family:var(--serif);font-weight:600;
+  font-family:var(--serif);font-weight:700;
   font-size:clamp(28px,3.8vw,44px);line-height:1.12;letter-spacing:.002em;
   color:var(--cream);text-wrap:balance;
 }
@@ -506,7 +488,7 @@ h1.hero-h1 .ln > span{transform:none!important}
       <span class="ln"><span>Indoor golf on real grass</span></span>
       <span class="ln"><span>in New York City.</span></span>
     </h1>
-    <p class="hero-sub fade-up">A private club with hitting bays turfed in living grass, not synthetic mats. Open year round.</p>
+    <p class="hero-sub fade-up">The first indoor private club with real, live grass. Open year round.</p>
     <div class="hero-cta fade-up">
       <a class="btn light" href="#waitlist">Join the waitlist <span class="arw" aria-hidden="true">→</span></a>
       <a class="btn-quiet" href="#club">About the club <span aria-hidden="true">↓</span></a>
@@ -522,28 +504,11 @@ h1.hero-h1 .ln > span{transform:none!important}
     <div class="club-grid">
       <div>
         <p class="label rv">The Club</p>
-        <h2 class="title rv" data-d="1">Fescue Club is an indoor golf club with real grass in every hitting bay.</h2>
+        <h2 class="title rv" data-d="1">The first indoor golf club with real grass.</h2>
       </div>
       <div class="club-body">
-        <p class="copy rv" data-d="1">The turf is grown off site and rotated through the bays as it wears, in the same way a grass tee line is rotated at an outdoor range. Members hit off living grass, indoors, in any season.</p>
-        <p class="copy rv" data-d="2">Turf responds to the club the way a course does; a mat does not. Every bay is fitted with TrackMan.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="facts">
-    <div class="wrap facts-grid">
-      <div class="fact rv">
-        <h3>Real grass</h3>
-        <p>Living turf in every bay, rotated as it wears.</p>
-      </div>
-      <div class="fact rv" data-d="1">
-        <h3>TrackMan</h3>
-        <p>Full club and ball data in every bay.</p>
-      </div>
-      <div class="fact rv" data-d="2">
-        <h3>Year round</h3>
-        <p>Climate controlled, open through the winter.</p>
+        <p class="copy rv" data-d="1">Indoor golf has always meant hitting off a mat. Fescue Club changes that. Each bay is turfed with living grass, grown off site by nursery partners and rotated in as it wears, much in the way a good range moves its grass tee line to let the turf recover.</p>
+        <p class="copy rv" data-d="2">Every bay is fitted with TrackMan for state-of-the-art shot tracking and precision, and the room is climate controlled, so you can play on grass all year, no matter the weather.</p>
       </div>
     </div>
   </div>
@@ -553,8 +518,8 @@ h1.hero-h1 .ln > span{transform:none!important}
 <section id="membership">
   <div class="wrap mem">
     <p class="label rv">Membership</p>
-    <h2 class="title rv" data-d="1">A limited membership.</h2>
-    <p class="mem-intro rv" data-d="2">Membership includes:</p>
+    <h2 class="title rv" data-d="1">A limited number of memberships.</h2>
+    <p class="mem-intro rv" data-d="2">Each membership includes:</p>
 
     <div class="mem-grid">
       <div class="card rv">
@@ -563,21 +528,21 @@ h1.hero-h1 .ln > span{transform:none!important}
           <path d="M7 17.5c2.5-3 5-3 7 0s5.5 2 8-1.5"/>
         </svg>
         <h3>Bay access</h3>
-        <p>Real grass bays, reserved in advance through the club app.</p>
+        <p>Time in the grass bays, reserved ahead through the club app.</p>
       </div>
       <div class="card rv" data-d="1">
         <svg class="cic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M11 11V7.5a5 5 0 0 1 10 0V11"/><rect x="6.5" y="11" width="19" height="16" rx="2"/><path d="M16 17v4"/>
         </svg>
         <h3>Bag storage</h3>
-        <p>Clubs kept at the club.</p>
+        <p>Store your clubs at the club rather than carrying them across town.</p>
       </div>
       <div class="card rv" data-d="2">
         <svg class="cic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <circle cx="16" cy="9" r="4.5"/><path d="M6.5 27c0-5.2 4.3-8.5 9.5-8.5s9.5 3.3 9.5 8.5"/><path d="M23 13.5l5 3-5 3"/>
         </svg>
         <h3>Instruction</h3>
-        <p>Lessons and club fitting on site.</p>
+        <p>Lessons and club fitting, on site.</p>
       </div>
     </div>
     <p class="fine mem-note rv">Membership terms and pricing are not final.</p>
@@ -588,35 +553,35 @@ h1.hero-h1 .ln > span{transform:none!important}
 <section class="faq" id="faq">
   <div class="wrap faq-in">
     <p class="label rv">Questions</p>
-    <h2 class="title rv" data-d="1">Common questions.</h2>
+    <h2 class="title rv" data-d="1">Questions you might have.</h2>
 
     <div class="q open">
       <h3 class="q-h"><button class="q-btn" aria-expanded="true">What is Fescue Club?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>A private indoor golf club in New York City with real grass in every hitting bay. Target opening 2027.</p></div>
+      <div class="q-body"><p>A private indoor golf club in New York City, with real grass in every hitting bay. Target opening is 2027.</p></div>
     </div>
     <div class="q">
       <h3 class="q-h"><button class="q-btn" aria-expanded="false">How does grass grow indoors?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>It isn't grown indoors. Turf is cultivated off site by greenhouse and nursery partners and rotated into the bays as it wears. Worn turf returns to the nursery to recover.</p></div>
+      <div class="q-body"><p>The turf is grown off site with greenhouse and nursery partners, then rotated into the bays as it wears. Worn turf returns to the nursery to recover while fresh turf takes its place.</p></div>
     </div>
     <div class="q">
       <h3 class="q-h"><button class="q-btn" aria-expanded="false">Why real grass instead of a mat?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>Turf responds to the club the way a course does. A mat allows a heavy strike to skid rather than dig, and leaves no divot to read. Practice on grass reflects the shot you would actually play.</p></div>
+      <div class="q-body"><p>A mat lets a heavy strike skid, so the ball flies anyway and there is nothing to learn from it. Grass does not forgive that, and it leaves a divot worth reading. Practising on turf means an indoor session reflects how the ball will actually behave on the course.</p></div>
     </div>
     <div class="q">
       <h3 class="q-h"><button class="q-btn" aria-expanded="false">When does the club open?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>We are targeting 2027 in New York City. Timing may change.</p></div>
+      <div class="q-body"><p>Target opening is 2027 in New York City. Timing may move, and the waitlist will hear first.</p></div>
     </div>
     <div class="q">
       <h3 class="q-h"><button class="q-btn" aria-expanded="false">Where will it be located?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>New York City. The site will be announced to the waitlist first.</p></div>
+      <div class="q-body"><p>In New York City. The site will be announced to the waitlist before it goes public.</p></div>
     </div>
     <div class="q">
       <h3 class="q-h"><button class="q-btn" aria-expanded="false">What will membership cost?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>Pricing is not final. Our current estimate is $300 to $500 per month. Founding rates will be offered to waitlist members first.</p></div>
+      <div class="q-body"><p>Pricing is not yet set. The current estimate is $300 to $500 a month, and waitlist members will be offered founding rates first.</p></div>
     </div>
     <div class="q">
       <h3 class="q-h"><button class="q-btn" aria-expanded="false">Is anyone else doing this?<span class="q-sign" aria-hidden="true"></span></button></h3>
-      <div class="q-body"><p>No indoor venue in New York currently offers real grass. Playing off grass indoors is established at the professional level — the TGL league plays on it in Florida.</p></div>
+      <div class="q-body"><p>Not in New York — every indoor venue here puts players on a mat. Real grass indoors is already proven at the top of the game: the TGL league plays on it in Florida.</p></div>
     </div>
   </div>
 </section>
@@ -627,7 +592,7 @@ h1.hero-h1 .ln > span{transform:none!important}
   <div class="wl-in">
     <p class="label rv">Sign up</p>
     <h2 class="rv" data-d="1" style="margin-top:4px">Join the waitlist</h2>
-    <p class="wl-copy rv" data-d="2">The waitlist receives news on opening, location and membership before it is made public. Founding rates will be offered to waitlist members first.</p>
+    <p class="wl-copy rv" data-d="2">The waitlist receives news on the opening, the location and membership before any of it is public. Founding rates will be offered to waitlist members first.</p>
 
     <form id="emailForm" class="rv" data-d="3" aria-label="Waitlist signup, step 1 of 2"
           action="https://formspree.io/f/mvzelyeb" method="POST" novalidate style="margin-top:30px">
@@ -648,7 +613,7 @@ h1.hero-h1 .ln > span{transform:none!important}
           <span class="tick" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 7.5l3 3 6-7"/></svg></span>
           You're on the list.
         </p>
-        <p class="panel-sub">A few optional questions. They help us plan bays, hours and membership.</p>
+        <p class="panel-sub">A few optional questions. The answers help shape bays, hours and membership.</p>
 
         <div class="prog-hd">
           <span>Question <span id="stepNum">1</span> of 6</span>
@@ -666,7 +631,7 @@ h1.hero-h1 .ln > span{transform:none!important}
           </div>
           <div class="qstep" data-step="1">
             <label class="q-title" for="q-zip">What is your ZIP code?</label>
-            <p class="q-hint">This helps us understand where demand is concentrated.</p>
+            <p class="q-hint">This helps map where demand is concentrated.</p>
             <div style="margin-top:17px"><input class="inp sm" id="q-zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="e.g. 10011" data-key="zip"></div>
           </div>
           <div class="qstep" data-step="2">
@@ -706,7 +671,7 @@ h1.hero-h1 .ln > span{transform:none!important}
           <span class="tick" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 7.5l3 3 6-7"/></svg></span>
           Thank you.
         </p>
-        <p class="panel-sub" style="font-size:15px;color:var(--on-dark)">You are on the waitlist. We will be in touch as opening plans and membership details are settled.</p>
+        <p class="panel-sub" style="font-size:15px;color:var(--on-dark)">You are on the waitlist. Expect word as opening plans and membership details are settled.</p>
       </div>
     </div>
   </div>
