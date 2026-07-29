@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fescue Club — Indoor Golf on Real Grass in New York City</title>
-<meta name="description" content="A premium indoor golf club opening in New York City (target fall 2027) with simulator bays where you hit off real, living grass — not synthetic mats. Year-round, climate-controlled. Join the waitlist.">
+<meta name="description" content="Indoor golf on real grass in New York City. Simulator bays with living turf, not synthetic mats. Year-round practice. Opening fall 2027 — join the waitlist.">
 <meta property="og:title" content="Fescue Club — Indoor Golf on Real Grass in New York City">
 <meta property="og:description" content="Simulator bays with living turf, grown off-site and rotated fresh into the bays. Year-round practice off real grass in NYC. Target opening fall 2027.">
 <meta property="og:type" content="website">
@@ -435,8 +435,12 @@ h1.hero-h1 em{font-style:normal;color:var(--lime)}
    05 — WAITLIST (dark close)
    ============================================================ */
 .wl{position:relative;background:var(--deep);color:var(--cream);overflow:hidden;isolation:isolate}
-.wl-bg{position:absolute;inset:0;z-index:-2}
-.wl-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 45%;opacity:.2;filter:saturate(.7)}
+.wl-bg{
+  position:absolute;inset:0;z-index:-2;
+  background-image:url("assets/hero-bay.jpg");
+  background-size:cover;background-position:60% 45%;
+  opacity:.2;filter:saturate(.7);
+}
 .wl::before{
   content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to bottom,var(--deep) 0%,rgba(22,33,26,.86) 40%,rgba(16,25,17,.97) 100%);
@@ -787,9 +791,7 @@ h1.hero-h1 .ln > span{transform:none!important}
 
 <!-- ============================== 05 — WAITLIST ============================== -->
 <section class="wl" id="waitlist">
-  <div class="wl-bg" aria-hidden="true">
-    <img src="assets/hero-bay.jpg" alt="" loading="lazy">
-  </div>
+  <div class="wl-bg" aria-hidden="true"></div>
   <div class="wl-in">
     <p class="eyebrow rv">05 — Sign up</p>
     <h2 class="rv" data-d="1">Join the waitlist</h2>
