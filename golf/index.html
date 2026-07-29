@@ -545,6 +545,15 @@ h1.hero-h1 em{font-style:normal;color:var(--lime)}
   .ticker ul{animation:none}
 }
 </style>
+<noscript>
+<style>
+/* Scroll animations are JS-driven; with no JS, show everything up front. */
+.rv,.fade-up{opacity:1!important;transform:none!important}
+h1.hero-h1 .ln > span{transform:none!important}
+.q-body{height:auto!important}
+.scroll-cue{display:none!important}
+</style>
+</noscript>
 </head>
 <body>
 
@@ -787,7 +796,8 @@ h1.hero-h1 em{font-style:normal;color:var(--lime)}
     <p class="wl-lead rv" data-d="2">Be the first to hear about opening plans and membership details. Waitlist members may get early access to discounted founding rates.</p>
 
     <!-- STEP 1: email -->
-    <form id="emailForm" class="rv" data-d="3" aria-label="Waitlist signup, step 1 of 2" novalidate>
+    <form id="emailForm" class="rv" data-d="3" aria-label="Waitlist signup, step 1 of 2"
+          action="https://formspree.io/f/mvzelyeb" method="POST" novalidate>
       <div class="f-row" style="display:block">
         <label class="f-label" for="wl-email">Email address</label>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
