@@ -2,75 +2,247 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOCIAL Invite - GWN Ventures</title>
-  <meta property="og:title" content="SOCIAL">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="https://gwnventures.com/images/social-og.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SOCIAL</title>
+  <!--
+    phase-hk-punch (screen download-page, items 25 and 20b; brief question 4 (A) drawn, the founder
+    preferring (B) if it can be done; question 7 as the founder answered it, 2026-11-13). The proposed site/social/invite/index.html for the website repository.
+    One page serves card links (?c=<22-character code>) and invites (?code=<code>), so the preview
+    tags below are the same for every link and name no one: no person, no card, no large image,
+    the app icon (images/social-icon.png, beside this file, goes to the site's images/).
+  -->
+  <meta property="og:title" content="From a friend on SOCIAL">
+  <meta property="og:description" content="Open it in the SOCIAL app.">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <script>
-    (function() {
-      var params = new URLSearchParams(window.location.search);
-      var code = params.get('code');
+  <meta property="og:site_name" content="SOCIAL">
+  <meta name="twitter:card" content="summary">
+  <link rel="apple-touch-icon" href="/images/social-icon.png">
+  <link rel="icon" type="image/png" href="/images/social-icon.png">
+  <style>
+    /*
+      The card page (the founder's answer to Question 7, 2026-11-13): generic, nothing of the card.
+      A friend sent you something on SOCIAL, one short line on why, and the download (the words
+      are the founder's, #249 round 2). No print: a card's shape on the page read as the item. Values are the app's theme tokens
+      (constants/theme.ts, the light set). Scoped to .card-page so the invite view keeps the site's
+      own stylesheet untouched.
+    */
+    :root {
+      --background: #FFFFFF;      /* colors.background */
+      --text-primary: #1C1C1E;    /* colors.text.primary */
+      --text-secondary: #8E8E93;  /* colors.text.secondary */
+      --button-primary: #2A2A2A;  /* colors.button.primary */
+      --button-text: #FFFFFF;     /* colors.button.primaryText */
+      --space-xs: 4px;  --space-sm: 8px;  --space-md: 12px; --space-base: 16px;
+      --space-lg: 20px; --space-xl: 24px; --space-xxl: 32px; --space-xxxl: 40px;
+      --radius-md: 12px;
+      --avatar-small: 36px;       /* layout.avatarSmall: the mark */
+      --column: 360px;            /* POLAROID_WIDTH: the page's column, a print's width */
+    }
+    html.is-card, html.is-card body { background: var(--background); }
+    html.is-card body { margin: 0; }
+    .invite-view { display: none; }
+    html.is-invite .invite-view { display: block; }
+    html.is-invite .card-page { display: none; }
 
-      if (!code || !/^[A-Za-z0-9]+$/.test(code)) {
+    .card-page {
+      box-sizing: border-box;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: calc(var(--space-xxxl) + env(safe-area-inset-top)) var(--space-lg)
+        calc(var(--space-xl) + env(safe-area-inset-bottom));
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+    }
+    .card-page *, .card-page *::before, .card-page *::after { box-sizing: border-box; }
+    .card-page .column { width: 100%; max-width: var(--column); }
+
+    /* The mark: the app icon and the name, as a card's band carries a face and a name. */
+    .card-page .mark {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .card-page .mark img {
+      width: var(--avatar-small);
+      height: var(--avatar-small);
+      border-radius: 50%;
+      display: block;
+    }
+    .card-page .mark span {
+      font-size: 17px;            /* sizes.body */
+      font-weight: 600;           /* weights.semibold */
+    }
+
+    /* What happened, then why, in the ink (no grey line: principle 4). */
+    .card-page h1 {
+      margin: var(--space-xxl) 0 0;
+      font-size: 28px;            /* sizes.largeTitle */
+      line-height: 34px;          /* sizes.largeTitle + spacing.xs * 1.5 */
+      font-weight: 700;           /* weights.bold */
+    }
+    .card-page .why {
+      margin: var(--space-md) 0 0;
+      font-size: 17px;            /* sizes.body */
+      line-height: 23px;          /* sizes.body + spacing.xs * 1.5 */
+      font-weight: 400;           /* weights.regular */
+    }
+
+    /*
+      Download, the one filled button; Open in SOCIAL, a plain line beneath for a phone that has
+      the app and opened the link in a browser (with the app, the link opens the app itself).
+    */
+    .card-page .actions {
+      margin-top: var(--space-xxl);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-base);
+    }
+    .card-page .download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      border-radius: var(--radius-md);
+      background: var(--button-primary);
+      color: var(--button-text);
+      font-size: 17px;            /* sizes.body */
+      font-weight: 600;           /* weights.semibold */
+      text-decoration: none;
+    }
+    .card-page .open {
+      align-self: center;
+      font-size: 14px;            /* sizes.secondary */
+      line-height: 20px;          /* sizes.secondary + spacing.xs * 1.5 */
+      font-weight: 600;           /* weights.semibold */
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .card-page .download:focus-visible, .card-page .open:focus-visible,
+    .card-page .foot a:focus-visible {
+      outline: 2px solid var(--text-primary);
+      outline-offset: 2px;
+    }
+
+    /* Whose page this is, small, at the foot. */
+    .card-page .foot {
+      margin-top: auto;
+      padding-top: var(--space-xxxl);
+      display: flex;
+      gap: var(--space-lg);
+      font-size: 12px;            /* sizes.caption */
+    }
+    .card-page .foot a { color: var(--text-secondary); text-decoration: none; }
+  </style>
+  <script>
+    // Which link this is, decided before anything draws. A card's code is exactly 22 URL-safe
+    // characters (utils/cardLink.ts in the app); an invite's code is letters and digits (as today).
+    // Neither: the SOCIAL page, as today.
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var card = params.get('c');
+      var code = params.get('code');
+      var isCard = !!card && /^[A-Za-z0-9_-]{22}$/.test(card);
+      var isInvite = !!code && /^[A-Za-z0-9]+$/.test(code);
+
+      if (isCard) {
+        document.documentElement.className = 'is-card';
+        var open = 'social://social/invite/?c=' + card + (isInvite ? '&code=' + code.toUpperCase() : '');
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('card-open').href = open;
+        });
+        return;
+      }
+
+      if (!isInvite) {
         window.location.href = '/social';
         return;
       }
 
+      // The invite, exactly as today: the site's stylesheet and font, the code, TestFlight.
+      document.documentElement.className = 'is-invite';
+      ['https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+       '/styles.css'].forEach(function (href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+      });
       code = code.toUpperCase();
       document.title = 'SOCIAL Invite — ' + code;
-
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('invite-code-display').textContent = code;
         document.getElementById('open-btn').href = 'social://invite/' + code;
-
-        document.getElementById('copy-btn').addEventListener('click', function() {
+        document.getElementById('copy-btn').addEventListener('click', function () {
           var btn = this;
-          navigator.clipboard.writeText(code).then(function() {
+          navigator.clipboard.writeText(code).then(function () {
             btn.textContent = 'Copied!';
-            setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
+            setTimeout(function () { btn.textContent = 'Copy Code'; }, 2000);
           });
         });
       });
     })();
   </script>
-
-  <nav>
-    <a href="/" class="nav-logo">GWN Ventures</a>
-    <div class="nav-links">
-      <a href="/consulting">Consulting</a>
-      <a href="/social" class="active">SOCIAL</a>
-    </div>
-  </nav>
-
-  <main class="invite-page">
-    <div class="invite-card">
-      <p class="invite-label">You've been invited to</p>
-      <h1>SOCIAL</h1>
-      <p class="invite-tagline">Not media, just social.</p>
-
-      <div class="invite-code-box">
-        <span class="invite-code-label">Your invite code</span>
-        <span id="invite-code-display" class="invite-code"></span>
+</head>
+<body>
+  <main class="card-page">
+    <div class="column">
+      <div class="mark">
+        <img src="/images/social-icon.png" alt="" width="36" height="36">
+        <span>SOCIAL</span>
       </div>
-
-      <div class="invite-actions">
-        <a href="https://testflight.apple.com/join/XYrDszEH" class="btn btn-primary">Get SOCIAL on TestFlight</a>
-        <button id="copy-btn" class="btn btn-outline" type="button">Copy Code</button>
-      </div>
-
-      <div class="invite-fallback">
-        <p>Already have SOCIAL?</p>
-        <a id="open-btn" href="#" class="invite-tf-link">Open in SOCIAL &rarr;</a>
+      <h1>A friend sent you something on SOCIAL</h1>
+      <p class="why">SOCIAL is the place for sharing moments with the people that matter.</p>
+      <div class="actions">
+        <!-- Until launch, the public beta the /social page already offers; at launch, the App
+             Store listing (one href to change). Question 18 in the spec's index. -->
+        <a class="download" href="https://testflight.apple.com/join/XYrDszEH">Download SOCIAL</a>
+        <a id="card-open" class="open" href="social://social/invite/">Open in SOCIAL</a>
       </div>
     </div>
+    <nav class="foot" aria-label="About this page">
+      <a href="/social/privacy/">Privacy</a>
+      <a href="/social/terms/">Terms</a>
+      <a href="/">gwnventures.com</a>
+    </nav>
   </main>
+
+  <div class="invite-view">
+    <nav>
+      <a href="/" class="nav-logo">GWN Ventures</a>
+      <div class="nav-links">
+        <a href="/consulting">Consulting</a>
+        <a href="/social" class="active">SOCIAL</a>
+      </div>
+    </nav>
+
+    <main class="invite-page">
+      <div class="invite-card">
+        <p class="invite-label">You've been invited to</p>
+        <h1>SOCIAL</h1>
+        <p class="invite-tagline">Not media, just social.</p>
+
+        <div class="invite-code-box">
+          <span class="invite-code-label">Your invite code</span>
+          <span id="invite-code-display" class="invite-code"></span>
+        </div>
+
+        <div class="invite-actions">
+          <a href="https://testflight.apple.com/join/XYrDszEH" class="btn btn-primary">Get SOCIAL on TestFlight</a>
+          <button id="copy-btn" class="btn btn-outline" type="button">Copy Code</button>
+        </div>
+
+        <div class="invite-fallback">
+          <p>Already have SOCIAL?</p>
+          <a id="open-btn" href="#" class="invite-tf-link">Open in SOCIAL &rarr;</a>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
